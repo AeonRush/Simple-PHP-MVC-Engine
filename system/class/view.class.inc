@@ -19,11 +19,11 @@ class View extends Eva {
     }
     private function layout($view){
         ob_start();
-        include($this->controller->path.'/view/'.$view.'.view.inc');
+        include($this->controller->path.'/view/'.$view.'.view.phtml');
         $this->content = ob_get_contents();
         ob_end_clean();
         ob_start();
-        include(__ROOT__.'/layout/'.$this->layout.'.layout.inc');
+        include(__ROOT__.'/layout/'.$this->layout.'.layout.phtml');
         $this->content = ob_get_contents();
         ob_end_clean();
         echo aeon_pack(optimize($this->content));
