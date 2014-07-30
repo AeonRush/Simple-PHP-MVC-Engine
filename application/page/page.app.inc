@@ -5,10 +5,4 @@ class Page extends App {
         $this->view->title = 'Home';
         $this->view->render('index');
     }
-    public function skills(){
-        $this->view->render('skills');
-    }
-    public function data(){
-        $this->view->render(array("data"));
-    }
 };
