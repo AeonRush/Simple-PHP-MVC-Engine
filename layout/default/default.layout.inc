@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="<?php echo $this->lang ?>">
+<head>
+	<link rel="shortcut icon" href="/public/image/favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!---
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+-->
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!--- Каноническая ссылка -->
+	<?php if(isset($this->canonical{6})) { ?> <link rel="canonical" href="<?php echo $this->canonical?>"> <?php } ?>
+	<title><?php echo $this->title?></title>
+	<!--- Ключевые слова -->
+	<?php if(isset($this->keywords{16})) { ?> <meta name="keywords" content="<?php echo $this->keywords?>"> <?php } ?>
+	<!--- Описание страницы -->
+	<?php if(isset($this->description)) { ?> <meta name="description" content="<?php echo $this->description?>"> <?php } ?>
+
+	<meta name="generator" content="AEON Web Engine">
+	<?php if(sizeof($this['meta']) > 0) echo join ($this['meta']); ?>
+
+    <!--- Styles -->
+    <link rel="stylesheet" href="/layout/default/default.css">
+	<?php  $j = sizeof($this['css']['src']); for($i=0;$i<$j; ++$i) { ?><link rel="stylesheet" href="<?php echo $this['css']['src'][$i]?>"><?php } ?>
+	<?php if(sizeof($this['css']['inline']) > 0) { ?><style><?php echo join ($this['css']['inline'])?></style><?php } ?>
+
+	<!--- JavaScript -->
+    <script src="/public/javascript/jquery-2.1.1.min.js"></script>
+    <?php  $j = sizeof($this['javascript']['src']); for($i=0;$i<$j; ++$i) { ?><script src="<?php echo $this['javascript']['src'][$i]?>"></script><?php } ?>
+	<?php if(sizeof($this['javascript']['inline']) > 0) { ?><script><?php echo join ($this['javascript']['inline'])?></script><?php } ?>
+    <script>
+        $(document).ready(function(){
+            var page = location.pathname;
+            page = page.substr(1);
+            page = (page.substr(0, page.indexOf('/')));
+            page = (page === '' ? 'home' : page);
+            var color = $("#" + page).addClass("active").css("backgroundColor");
+            $(".social-share").css("borderColor", color);
+            $("section > article:nth-child(2)").css("backgroundColor", color);
+        });
+    </script>
+</head>
+<body>
+<!--- Header section -->
+<header>
+	<!--- Menu -->
+    <nav>
+        <a><img src="/layout/default/image/menu10.svg" alt="Menu" onclick="$('header > nav:last-child').toggleClass('show')"></a>
+    </nav>
+	<nav>
+        <a href="/" id="home">Я</a>
+        <a href="/skills/" id="skills">Навыки</a>
+        <a href="/projects/" id="projects">Projects</a>
+        <a href="/aeonrush/" id="aeonrush">AEON Project</a>
+	</nav>
+</header>
+<!--- Content section -->
+<section><?php echo $this->content?></section>
+<section class="font-white font-light social-share">
+    <article class="center">
+        <div>
+            <h2>Будьте на связи</h2>
+            <nav>
+                <a><img src="/layout/default/image/facebook42.svg"><span>Facebook</span></a>
+                <a><img src="/layout/default/image/vkcom1.svg"><span>VK</span></a>
+                <a><img src="/layout/default/image/envelope4.svg"><span>black_web@outlook.com</span></a>
+            </nav>
+        </div>
+    </article>
+</section>
+<!--- Footer section -->
+<footer>
+	<div>
+		&copy; <?php echo Date('Y')?><a href="http://aeonrush.com/">AeonRush</a>
+	</div>
+</footer>
+
+</body>
+</html>

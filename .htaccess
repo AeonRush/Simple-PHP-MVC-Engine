@@ -1,0 +1,45 @@
+AddType application/vnd.ms-fontobject .eot
+AddType font/ttf .ttf
+AddType font/otf .otf
+AddType application/x-font-woff woff
+
+ 
+<FilesMatch "\.(ttf|ttc|otf|eot|woff|font.css)$">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "http://onmy.local"
+  </IfModule>
+</FilesMatch>
+
+# Make handle any errors
+# ErrorDocument 403 /handlers/error.php?code=404
+# ErrorDocument 404 /handlers/error.php?code=404
+# ErrorDocument 500 /handlers/error.php?code=500
+
+# Don't show directory listings for URLs which map to a directory
+Options -Indexes
+
+# Follow symbolic links in this directory
+Options +FollowSymLinks
+
+# Set the default handler
+DirectoryIndex index.php
+
+<FilesMatch "\.(sql|inc|key|config)$">
+	Order allow,deny
+</FilesMatch>
+
+RewriteEngine on
+RewriteBase / 
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^(.*)\.(css|js|jpg|png|svg)$ /static.php [L]
+
+
+RewriteRule ^index\.php - [L] 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule . /index.php [L]
+
+RewriteCond %{HTTP_HOST} ^www\.onmy\.org [NC]
+RewriteRule ^(.*)$ http://onmy.org/$1 [R=301,L]
