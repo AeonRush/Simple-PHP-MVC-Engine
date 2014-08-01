@@ -1,2 +1,2 @@
-Simple-PHP-MVC-Engine
+Simple PHP MVC Engine
 =====================
