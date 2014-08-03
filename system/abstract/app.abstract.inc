@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class App
+ */
 abstract class App extends Eva {
     protected $view;
     public function __construct(){
@@ -7,3 +10,5 @@ abstract class App extends Eva {
         $this->path = __APP__.'/'.strtolower(get_called_class());
     }
 };
+
+/// 2014 | AronRUSH |

@@ -1,5 +1,5 @@
 <?php
-    
+
 class Router {
     private static $self;
     private $rules = array();

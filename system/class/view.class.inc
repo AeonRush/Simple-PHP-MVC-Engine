@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class View
+ */
 class View extends Eva {
     public $layout = 'default/default';
     public function __construct(&$controller) {
@@ -33,3 +36,5 @@ class View extends Eva {
         return;
     }
 };
+
+/// 2014 | AeonRUSH |

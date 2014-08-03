@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class Eva
+ */
 class Eva extends ArrayIterator {
     protected $__data__;
     public function __get($name) {
@@ -8,4 +11,6 @@ class Eva extends ArrayIterator {
     public function __set($name, $value) {
         $this->__data__[$name] = $value;
     }
-}
+};
+
+/// 2014 | AeonRUSH |

@@ -1,5 +1,8 @@
 ﻿<?php
 
+/**
+ * Class __
+ */
 final class __ {
     public static $pdo;
 	private static $app;

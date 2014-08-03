@@ -1,4 +1,5 @@
 ﻿<?php
+
 /**
  * Исправление неверного расчета контрольной суммы CRC32 в PHP
  * @param $v
@@ -6,8 +7,7 @@
  */
 function crc32_fix($v){
 	$v = crc32($v);
-	if($v < 0) $v += 4294967296;
-	return $v;
+	return ($v < 0) ? ($v + 4294967296) : $v;
 };
 
 function buildURL($new){ 
@@ -26,7 +26,11 @@ function buildURL($new){
 	return $prefix.join('&', $url);
 };
 
-/// Преобразование строки в каноническую ссылку
+/**
+ * Преобразование строки в каноническую ссылку
+ * @param $url
+ * @return string
+ */
 function toCanonical($url){
 	$url = strip_tags($url);
 	$url = mb_substr($url, 0, 100);
@@ -36,7 +40,11 @@ function toCanonical($url){
 	return mb_strtolower( mb_ereg_replace('\_+', '-', $url), 'UTF-8' );
 };
 
-/// Очистка строки
+/**
+ * Очистка строки
+ * @param $str
+ * @return string
+ */
 function strclean(&$str){
 	$str = strip_tags($str);
 	/// $str = str_replace('№', '_', $str);
@@ -44,28 +52,42 @@ function strclean(&$str){
 	return $str;
 };
 
-/// Адекватное отображение JSON в кодировке UTF-8
+/**
+ * Адекватное отображение JSON в кодировке UTF-8
+ * @param $value
+ * @return mixed
+ */
 function json_encode_utf8($value){
 	return ( preg_replace_callback (
     	'/\\\u([0-9a-fA-F]{4})/',
-    	create_function('$match', 'return mb_convert_encoding("&#" . intval($match[1], 16) . ";", "UTF-8", "HTML-ENTITIES");'),
+    	create_function('$match', 'return mb_convert_encoding("&#".intval($match[1], 16).";", "UTF-8", "HTML-ENTITIES");'),
     	json_encode($value)
     ) ); 
 };
 
-/// Это поисковый робот?
+/**
+ * Это поисковый робот?
+ * @return int
+ */
 function isCrowler() {
     /// Названия User-Agent'ов поисковых пауков
 	return preg_match('/(bingbot|msnbot|googlebot|slurp|teoma|scooter|ia_archiver|lycos|yandex|stackrambler|mail\.ru|aport|webalta)/i', $_SERVER['HTTP_USER_AGENT']);
 };
 
-/// Это мобильный браузер?
+/**
+ * Это мобильный браузер?
+ * @return int
+ */
 function isMobile() {
 	/// Android не указывает в агенте mobile
 	return preg_match('/(mobile|android|phone)/i', $_SERVER['HTTP_USER_AGENT']);
 };
 
-/// Оптимизация
+/**
+ * Оптимизация
+ * @param $__content
+ * @return mixed
+ */
 function text_optimize(&$__content) {
 	$__content = str_replace('\r\n', '', $__content);
 	$__content = str_replace('\n', '', $__content);
@@ -74,6 +96,7 @@ function text_optimize(&$__content) {
 
 	return $__content;
 };
+
 function optimize(&$__content) {
 	/// $__content = preg_replace('/\/\*.*\*\//', '', $__content);
     # $__content = mb_ereg_replace('([^:]\/\/[^\n\r]*(\n|\r\n))', '', $__content);
@@ -83,7 +106,11 @@ function optimize(&$__content) {
 	return $__content;
 };
 
-/// Упаковываем контент для передачи браузеру :)
+/**
+ * Упаковываем контент для передачи браузеру :)
+ * @param $output
+ * @return string
+ */
 function aeon_pack($output){
 	/// Поддерживается ли deflate
 	if( strpos($_SERVER['HTTP_ACCEPT_ENCODING'], 'deflate') ) {
