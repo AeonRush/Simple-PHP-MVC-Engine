@@ -1,10 +1,12 @@
-<?php
+ <?php
 
 /**
  * Class Auth
  * Класс для авторизации
  */
 final class Auth {
+    private $user;
+    private $isAuth;
     private static $self;
 
     /**
@@ -15,7 +17,8 @@ final class Auth {
         return self::$self;
     }
     public function __construct(){
-        $this->user['authorized'] = false;
+        $this->user = $_SESSION['aeon-user'];
+        $this->isAuth = !empty($this->user);
     }
     public function getRole(){
         /// IF $this->user['authorized'] == true BUT $this->user['role'] == NULL THEN $this->user['role'] = 'secure' 
@@ -30,9 +33,8 @@ final class Auth {
      * @return bool
      */
     public function isAuth(){
-        return $this->user['authorized'] ? $this->user['authorized'] : false;
+        return $this->isAuth;
     }
-
     /**
      * Получение данных о пользователе
      * @return bool
