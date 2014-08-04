@@ -42,6 +42,10 @@ final class Auth {
     public function getUser(){
         return $this->user['data'] ? $this->user['data'] : false;
     }
+    //TODO: DB auth
+    public function auth(){
+        return false;
+    }
 };
 
 /// 2014 | AeonRUSH |
