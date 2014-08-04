@@ -19,6 +19,7 @@ final class Auth {
     public function __construct(){
         $this->user = $_SESSION['aeon-user'];
         $this->isAuth = !empty($this->user);
+        //TODO: Сделать проверку данных при авторизации. Например при использовании cookie
     }
     public function getRole(){
         /// IF $this->user['authorized'] == true BUT $this->user['role'] == NULL THEN $this->user['role'] = 'secure' 
