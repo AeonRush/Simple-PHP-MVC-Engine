@@ -12,6 +12,7 @@ class AEONLoader {
 	}
 	public function __construct() {
 		spl_autoload_register(array($this, 'apps'));
+		spl_autoload_register(array($this, 'fragments'));
 		spl_autoload_register(array($this, 'classes'));
 		spl_autoload_register(array($this, 'abstracts'));
 		spl_autoload_register(array($this, 'distributed'));
@@ -24,6 +25,9 @@ class AEONLoader {
     }
 	public function apps($class){
         $this->load($class, __APP__.'/'.$class, '.app.inc');
+	}
+	public function fragments($class){
+        $this->load($class, __APP__.'/'.$class.'.fragment', '.fragment.inc');
 	}
 	public function abstracts($class){
         $this->load($class, __SYSTEM__.'/abstract', '.abstract.inc');

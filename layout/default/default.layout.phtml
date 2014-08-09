@@ -16,17 +16,17 @@
 	<?php if(isset($this->description)) { ?> <meta name="description" content="<?php echo $this->description?>"> <?php } ?>
 
 	<meta name="generator" content="AEON Web Engine">
-	<?php if(sizeof($this['meta']) > 0) echo join ($this['meta']); ?>
+	<?php if(sizeof($this['meta']) > 0) echo join ('', $this['meta']); ?>
 
     <!--- Styles -->
     <link rel="stylesheet" href="/layout/default/default.css">
 	<?php  $j = sizeof($this['css']['src']); for($i=0;$i<$j; ++$i) { ?><link rel="stylesheet" href="<?php echo $this['css']['src'][$i]?>"><?php } ?>
-	<?php if(sizeof($this['css']['inline']) > 0) { ?><style><?php echo join ($this['css']['inline'])?></style><?php } ?>
+	<?php if(sizeof($this['css']['inline']) > 0) { ?><style><?php echo join ('', $this['css']['inline'])?></style><?php } ?>
 
 	<!--- JavaScript -->
     <script src="/public/javascript/jquery-2.1.1.min.js"></script>
     <?php  $j = sizeof($this['javascript']['src']); for($i=0;$i<$j; ++$i) { ?><script src="<?php echo $this['javascript']['src'][$i]?>"></script><?php } ?>
-	<?php if(sizeof($this['javascript']['inline']) > 0) { ?><script><?php echo join ($this['javascript']['inline'])?></script><?php } ?>
+	<?php if(sizeof($this['javascript']['inline']) > 0) { ?><script><?php echo join ('', $this['javascript']['inline'])?></script><?php } ?>
     <script>
         $(document).ready(function(){
             var page = location.pathname;

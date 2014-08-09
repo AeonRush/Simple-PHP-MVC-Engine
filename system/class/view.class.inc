@@ -5,6 +5,7 @@
  */
 class View extends Eva {
     public $layout = 'default/default';
+    public $controller;
     public function __construct(&$controller) {
         $this->controller = $controller;
     }
