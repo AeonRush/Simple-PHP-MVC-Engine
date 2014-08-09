@@ -7,12 +7,15 @@ Options +FollowSymLinks
 # Set the default handler
 DirectoryIndex index.php
 
-AddType image/svg+xml .svg
-AddOutputFilterByType DEFLATE image/svg+xml
 
 <FilesMatch "\.(sql|inc|key|config|phtml)$">
 	Order allow,deny
 </FilesMatch>
+
+<IfModule mime_module>
+    AddType image/svg+xml .svg
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
 
 RewriteEngine on
 RewriteBase / 
