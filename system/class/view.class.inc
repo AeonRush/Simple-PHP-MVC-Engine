@@ -30,7 +30,6 @@ class View extends Eva {
         include(__ROOT__.'/layout/'.$this->layout.'.layout.phtml');
         $this->content = ob_get_contents();
         ob_end_clean();
-        $this->content .= (microtime(true) - $start);
         echo aeon_pack(optimize($this->content));
     }
     private function ajax(&$data){
