@@ -13,7 +13,7 @@
 	<!--- Ключевые слова -->
 	<?php if(isset($this->keywords{16})) { ?> <meta name="keywords" content="<?php echo $this->keywords?>"> <?php } ?>
 	<!--- Описание страницы -->
-	<?php if(isset($this->description)) { ?> <meta name="description" content="<?php echo $this->description?>"> <?php } ?>
+	<?php if(isset($this->description{8})) { ?> <meta name="description" content="<?php echo $this->description?>"> <?php } ?>
 
 	<meta name="generator" content="AEON Web Engine">
 	<?php if(sizeof($this['meta']) > 0) echo join ('', $this['meta']); ?>
