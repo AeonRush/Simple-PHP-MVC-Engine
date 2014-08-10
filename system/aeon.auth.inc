@@ -18,7 +18,7 @@ final class Auth {
     }
     public function __construct(){
         $this->user = $_SESSION['aeon-user'];
-        $this->isAuth = !empty($this->user);
+        $this->isAuth = !empty($_SESSION['aeon-user']);
         //TODO: Сделать проверку данных при авторизации. Например при использовании cookie
     }
     public function getRole(){
@@ -44,9 +44,14 @@ final class Auth {
         return $this->user['data'] ? $this->user['data'] : false;
     }
     //TODO: DB auth
-    public function auth(){
+    public static function auth(){
         return false;
     }
+    public static function out(){
+        $_SESSION['aeon-user'] = array();
+        unset($_SESSION['aeon-user']);
+    }
+
 };
 
 /// 2014 | AeonRUSH |
