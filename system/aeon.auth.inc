@@ -12,7 +12,7 @@ final class Auth {
     /**
      * @return Auth
      */
-    public function init(){
+    public static function init(){
         if(self::$self == NULL) self::$self = new self();
         return self::$self;
     }

@@ -12,22 +12,23 @@ class AEONLoader {
 	}
 	public function __construct() {
 		spl_autoload_register(array($this, 'apps'));
-		spl_autoload_register(array($this, 'fragments'));
 		spl_autoload_register(array($this, 'classes'));
 		spl_autoload_register(array($this, 'abstracts'));
+		spl_autoload_register(array($this, 'fragments'));
 		spl_autoload_register(array($this, 'distributed'));
 	}
     private function load($class, $path, $ext = '.inc') {
+        $class = strtolower($class);
         if(class_exists($class)) return;
 		spl_autoload_extensions($ext);
     	set_include_path($path);
 		spl_autoload($class);
     }
 	public function apps($class){
-        $this->load($class, __APP__.'/'.$class, '.app.inc');
+        $this->load($class, __APP__.'/'.strtolower($class), '.app.inc');
 	}
 	public function fragments($class){
-        $this->load($class, __APP__.'/'.$class.'.fragment', '.fragment.inc');
+        $this->load($class, __APP__.'/'.strtolower($class).'.fragment', '.fragment.inc');
 	}
 	public function abstracts($class){
         $this->load($class, __SYSTEM__.'/abstract', '.abstract.inc');

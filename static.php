@@ -22,7 +22,7 @@ $_SERVER['REQUEST_URI'] = str_replace('layout/view', 'layout', $_SERVER['REQUEST
 
 $file = __DIR__.'/application/'.$_SERVER['REQUEST_URI'];
 
-# if(!file_exists($dir)) msg404(true);
+if(!file_exists($file)) msg404(true);
 
 header('Content-type: '.$__mime[substr($file, strrpos($file, '.', -4)+1)]);
 

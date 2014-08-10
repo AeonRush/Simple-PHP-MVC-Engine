@@ -1,5 +1,7 @@
 <?php
 
+$start = microtime(true);
+
 error_reporting(E_ALL);
 session_start();
 mb_internal_encoding('UTF-8');
@@ -18,5 +20,6 @@ ob_start();
     include(__SYSTEM__.'/aeon.engine.inc');
 ob_end_clean();
 __::init();
+
 
 /// 2014 | AeonRUSH |

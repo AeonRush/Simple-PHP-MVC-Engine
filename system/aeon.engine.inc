@@ -13,7 +13,7 @@ final class __ {
         self::$app = new self();
         
         try { 
-            self::$pdo = new PDO('mysql:host=127.0.0.1; dbname=demo', 'root', '123321',  array( PDO::ATTR_PERSISTENT => true )); 
+            self::$pdo = new PDO('mysql:host=127.0.0.1; dbname=dem1o', 'root', '123321',  array( PDO::ATTR_PERSISTENT => true )); 
     	    self::$pdo->query('SET character_set_client="utf8", character_set_results="utf8", collation_connection="cp1251_general_ci"');
         }
 	    catch(Exception $e){ /* Do nothing */ }

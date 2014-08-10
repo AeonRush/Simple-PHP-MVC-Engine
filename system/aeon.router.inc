@@ -47,8 +47,11 @@ class Router {
 				
                 $class = explode('/', $e[0]);
                 $e = new $class[0]();
-                $e->$class[1]();
-
+                if(method_exists($e, $class[1])) $e->$class[1]();
+                else { 
+                    unset($class, $e, $url, $matches);
+                    msg404(true);
+                }
                 unset($class, $e, $url, $matches);
                 return;
 			};
