@@ -12,6 +12,12 @@ DirectoryIndex index.php
 	Order allow,deny
 </FilesMatch>
 
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ico|jpg|png|gif|css|js)$">
+        Header set Cache-Control "max-age=2592000, no-cache, private, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
 <IfModule mime_module>
     AddType image/svg+xml .svg
     AddOutputFilterByType DEFLATE image/svg+xml
