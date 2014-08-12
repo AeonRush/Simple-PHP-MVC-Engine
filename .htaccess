@@ -7,20 +7,33 @@ Options +FollowSymLinks
 # Set the default handler
 DirectoryIndex index.php
 
-
 <FilesMatch "\.(sql|inc|key|config|phtml)$">
 	Order allow,deny
 </FilesMatch>
 
 <IfModule mod_headers.c>
-    <FilesMatch "\.(ico|jpg|png|gif|css|js)$">
+    <FilesMatch "\.(ico|jpg|png|gif|css|js|svg|woff|ttf)$">
         Header set Cache-Control "max-age=2592000, no-cache, private, must-revalidate"
     </FilesMatch>
 </IfModule>
 
 <IfModule mime_module>
     AddType image/svg+xml .svg
+    AddType application/font-woff .woff
+    AddType application/x-font-ttf .ttf
+    
+
     AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+
 </IfModule>
 
 RewriteEngine on
