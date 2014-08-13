@@ -11,7 +11,7 @@ class View extends Eva {
     }
     public function add($k, $v){
         $k = explode(':', $k);
-        if(!in_array($k[1], arSray('inline', 'src'))) {
+        if(!in_array($k[1], array('inline', 'src'))) {
             $v = '/'.$k[1].'/'.$v;
             $k[1] = 'src';   
         };
