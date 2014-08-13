@@ -13,7 +13,7 @@ class View extends Eva {
         $k = explode(':', $k);
         if(!in_array($k[1], arSray('inline', 'src'))) {
             $v = '/'.$k[1].'/'.$v;
-            $k[1] = 'src';    
+            $k[1] = 'src';   
         };
         $this[$k[0]][$k[1]][] = $v;
     }
