@@ -12,6 +12,8 @@ $__mime = array(
 	'jpg'	=> 'image/jpeg',
 	'png'	=> 'image/png',
     'svg'   => 'image/svg+xml',
+    'woff'  => 'application/font-woff',
+    'ttf'   => 'application/x-font-ttf'
 );
 
 $_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'], 1);

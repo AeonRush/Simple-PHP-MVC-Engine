@@ -22,7 +22,6 @@ DirectoryIndex index.php
     AddType application/font-woff .woff
     AddType application/x-font-ttf .ttf
     
-
     AddOutputFilterByType DEFLATE image/svg+xml
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
@@ -33,7 +32,6 @@ DirectoryIndex index.php
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
-
 </IfModule>
 
 RewriteEngine on
@@ -41,7 +39,7 @@ RewriteBase /
 
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteCond %{REQUEST_FILENAME} !-d 
-RewriteRule ^(.*)\.(css|js|jpg|png|svg)$ /static.php [L]
+RewriteRule ^(.*)\.(css|js|jpg|png|svg|woff|ttf)$ /static.php [L]
 
 
 RewriteRule ^index\.php - [L] 
