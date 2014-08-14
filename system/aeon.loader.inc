@@ -13,6 +13,7 @@ class AEONLoader {
 	public function __construct() {
 		spl_autoload_register(array($this, 'apps'));
 		spl_autoload_register(array($this, 'classes'));
+        spl_autoload_register(array($this, 'models'));
 		spl_autoload_register(array($this, 'abstracts'));
 		spl_autoload_register(array($this, 'fragments'));
 		spl_autoload_register(array($this, 'distributed'));
@@ -30,6 +31,11 @@ class AEONLoader {
 	public function fragments($class){
         $this->load($class, __APP__.'/'.strtolower($class).'.fragment', '.fragment.inc');
 	}
+    public function models($class){
+        if(class_exists($class)) return;
+        $class = str_replace('model', '', strtolower($class));
+        include(__ROOT__.'/model/'.$class.'.model.inc');
+    }
 	public function abstracts($class){
         $this->load($class, __SYSTEM__.'/abstract', '.abstract.inc');
 	}
