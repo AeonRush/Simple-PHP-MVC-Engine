@@ -22,8 +22,8 @@ class Router {
         };
         unset($files);
         
-        if(__::isAuth()) {
-            $files = glob(__APP__.'/*/routes.'.__::getRole().'.inc');
+        if(\app::isAuth()) {
+            $files = glob(__APP__.'/*/routes.'.\app::getRole().'.inc');
             foreach($files as $k => $v) {
                 $this->rules = array_merge($this->rules, include($v));
             };
@@ -46,6 +46,7 @@ class Router {
 				if(isset($e[1]{5})) $_GET = array_merge($_GET, json_decode('{"'.$e[1].'"}', true));
 				
                 $class = explode('/', $e[0]);
+                $class[0] = '\Page\\'.$class[0];
                 $e = new $class[0]();
                 if(method_exists($e, $class[1])) $e->$class[1]();
                 else { 

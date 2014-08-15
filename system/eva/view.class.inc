@@ -3,17 +3,18 @@
 /**
  * Class View
  */
+namespace Eva;
 class View extends Eva {
     public $layout = 'default/default';
-    public $controller;
-    public function __construct(&$controller) {
-        $this->controller = $controller;
+    public $page;
+    public function __construct(&$page) {
+        $this->page = $page;
     }
     public function add($k, $v){
         $k = explode(':', $k);
         if(!in_array($k[1], array('inline', 'src'))) {
             $v = '/'.$k[1].'/'.$v;
-            $k[1] = 'src';   
+            $k[1] = 'src';
         };
         $this[$k[0]][$k[1]][] = $v;
     }
@@ -23,7 +24,7 @@ class View extends Eva {
     }
     private function layout($view){
         ob_start();
-        include($this->controller->path.'/view/'.$view.'.view.phtml');
+        include($this->page->path.'/view/'.$view.'.view.phtml');
         $this->content = ob_get_contents();
         ob_end_clean();
         ob_start();

@@ -17,6 +17,6 @@ ob_start();
     include(__SYSTEM__.'/aeon.loader.inc');
     include(__SYSTEM__.'/aeon.engine.inc');
 ob_end_clean();
-__::init();
+\app::init();
 
 /// 2014 | AeonRUSH |

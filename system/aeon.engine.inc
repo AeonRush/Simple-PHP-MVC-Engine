@@ -1,9 +1,9 @@
-﻿<?php
+<?php
 
 /**
  * Class __
  */
-final class __ {
+final class app {
     public static $db;
 	private static $app;
 	private static $auth;
@@ -21,8 +21,8 @@ final class __ {
         }
 	    catch(Exception $e){ /* Do nothing */ }
 
-        self::$auth = Auth::init();
-        self::$router = Router::init();
+        self::$auth = \Auth::init();
+        self::$router = \Router::init();
         
         return self::$app;
 	}

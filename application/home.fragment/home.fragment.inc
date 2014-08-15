@@ -1,6 +1,7 @@
 <?php
 
-class Test extends Fragment {
+namespace Fragment;
+class Home extends \Eva\Fragment {
     public $data;
     public function index(){
         $this->data = array('key1' => 'Simple, stylish, fast!');
