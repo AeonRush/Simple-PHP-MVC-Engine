@@ -12,7 +12,7 @@ abstract class Page extends Eva {
         $path = $path[1].'.'.$path[0];
         $this->path = __APP__.'/'.strtolower($path);
     }
-    public function render(&$data){
+    public function render($data){
         $this->view->render($data);
     }
 };
