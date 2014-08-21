@@ -15,7 +15,12 @@ class AEONLoader {
 	}
     public function preprocess($class){
         if(class_exists($class)) return;
-        $class = explode('/', strtolower(strtr($class, '\\', '/')));
+        $temp = explode('/', strtolower(strtr($class, '\\', '/')));
+        $class = array();
+        foreach ($temp as $k=>$v){ 
+            if(!empty($v)) $class[] = $v; 
+        };
+        unset($temp);
         $class[0] .= 's';
         $this->$class[0]($class[1]);
     }
