@@ -5,7 +5,7 @@
  */
 namespace Eva {
     class Fragment extends Eva {
-        public function __construct($method, &$parent_view){
+        public function __construct($method, &$parent_view, $args){
 
             if(\app::isAuth() && method_exists($this, 'secure_'.$method)) {
                 $method = 'secure_'.$method;
@@ -13,7 +13,7 @@ namespace Eva {
 
             if(!method_exists($this, $method)) return;
             $this->view = $parent_view;
-            return $this->$method();
+            return $this->$method($args);
         }
         protected function render($view) {
             include(__APP__.'/'.str_replace('fragment\\', '', strtolower(get_called_class())).'.fragment/view/'.$view.'.view.phtml');
