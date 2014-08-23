@@ -25,7 +25,7 @@ class Router {
         if(\app::isAuth()) {
             $this->getRoutes(__APP__.'/*/routes.'.\app::getRole().'.inc');
         } else {
-            $this->getRoutes(__APP__.'/*/routes.unsafe.only.inc');
+            $this->getRoutes(__APP__.'/*/routes.unsecure.only.inc');
         };
         foreach($this->rules as $template => $params) {
             $url = explode(':', $template);
