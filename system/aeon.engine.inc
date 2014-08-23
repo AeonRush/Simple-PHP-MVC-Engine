@@ -1,7 +1,8 @@
 <?php
 
 /**
- * Class __
+ * Class app
+ * Базовый класс
  */
 final class app {
     public static $db;

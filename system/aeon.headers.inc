@@ -1,7 +1,7 @@
 ﻿<?php
 
 header('X-Powered-By: AEON Web Engine');
-header('X-Powered-By-Version: v2.Alpha');
+header('X-Powered-By-Version: v2:Alpha');
 /**
  * Записывает код 404 в заголовок ответа
  * @param bool $terminate   немедленнно прекратить выролнение скрипта

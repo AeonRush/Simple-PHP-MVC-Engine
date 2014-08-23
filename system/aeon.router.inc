@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class Router
+ * Класс обработки путей URL
+ */
 class Router {
     private static $self;
     private $rules = array();
@@ -16,21 +20,14 @@ class Router {
         
 		$_SERVER['REQUEST_URI'] = iconv('cp1251', 'utf-8', substr($_SERVER['REQUEST_URI'], ($_SERVER['REQUEST_URI'][1] == '?') ? 2 : 1));
         
-        $files = glob(__APP__.'/*/routes.inc');
-        foreach($files as $k => $v) {
-            $this->rules = array_merge($this->rules, include($v));
-        };
-        unset($files);
+        $this->getRoutes(__APP__.'/*/routes.inc');
         
         if(\app::isAuth()) {
-            $files = glob(__APP__.'/*/routes.'.\app::getRole().'.inc');
-            foreach($files as $k => $v) {
-                $this->rules = array_merge($this->rules, include($v));
-            };
-            unset($files);
+            $this->getRoutes(__APP__.'/*/routes.'.\app::getRole().'.inc');
+        } else {
+            $this->getRoutes(__APP__.'/*/routes.unsafe.only.inc');
         };
-
-		foreach($this->rules as $template => $params) {
+        foreach($this->rules as $template => $params) {
             $url = explode(':', $template);
 
             $url[1] = !$url[1] ? 'get' : $url[1];
@@ -58,7 +55,19 @@ class Router {
 			};
 		};
 		msg404(true);
-	}	
+	}
+
+    /**
+     * Получение списка путей
+     * @param $url
+     */
+    private function getRoutes($url) {
+        $files = glob($url);
+        foreach($files as $k => $v) {
+            $this->rules = array_merge($this->rules, include($v));
+        };
+        unset($files);
+    }
 };
 
 /// 2014 | AeonRUSH |

@@ -21,12 +21,17 @@ final class Auth {
         $this->isAuth = !empty($_SESSION['aeon-user']);
         //TODO: Сделать проверку данных при авторизации. Например при использовании cookie
     }
+
+    /**
+     * Получение роли пользователя, если нужно.
+     * Используется в aeon.router для подключения роутера пользователя
+     * @return mixed
+     */
     public function getRole(){
         /// IF $this->user['authorized'] == true BUT $this->user['role'] == NULL THEN $this->user['role'] = 'secure' 
         if($this->user['role'] != NULL) return $this->user['role'];
         $this->user['role'] = 'guest';
         if($this->isAuth()) $this->user['role'] = 'secure';
-        
         return $this->user['role'];
     }
     /**
@@ -47,6 +52,10 @@ final class Auth {
     public static function auth(){
         return false;
     }
+
+    /**
+     * LOGOUT
+     */
     public static function out(){
         $_SESSION['aeon-user'] = array();
         unset($_SESSION['aeon-user']);

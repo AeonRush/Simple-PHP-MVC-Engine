@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7ca39b1-cef5-4a45-95e9-19441285adfe" name="Default" comment="" />
+    <list default="true" id="c7ca39b1-cef5-4a45-95e9-19441285adfe" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/aeon.auth.inc" afterPath="$PROJECT_DIR$/system/aeon.auth.inc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/aeon.engine.inc" afterPath="$PROJECT_DIR$/system/aeon.engine.inc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/aeon.headers.inc" afterPath="$PROJECT_DIR$/system/aeon.headers.inc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/aeon.router.inc" afterPath="$PROJECT_DIR$/system/aeon.router.inc" />
+    </list>
     <ignored path="Simple-PHP-MVC-Engine.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="aeon.auth.inc" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/system/aeon.auth.inc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="525" selection-end="525" vertical-scroll-proportion="0.4450262" vertical-offset="0" max-vertical-offset="573">
+            <state line="56" column="13" selection-start="1498" selection-end="1498" vertical-scroll-proportion="1.0613155" vertical-offset="0" max-vertical-offset="1207">
               <folding />
             </state>
           </provider>
@@ -52,6 +57,10 @@
         <option value="$PROJECT_DIR$/model/test.model.inc" />
         <option value="$PROJECT_DIR$/system/aeon.loader.inc" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/system/aeon.auth.inc" />
+        <option value="$PROJECT_DIR$/system/aeon.headers.inc" />
+        <option value="$PROJECT_DIR$/system/aeon.router.inc" />
+        <option value="$PROJECT_DIR$/system/aeon.engine.inc" />
       </list>
     </option>
   </component>
@@ -59,8 +68,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1380" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -94,6 +103,30 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Simple-PHP-MVC-Engine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -135,8 +168,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1380" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -179,6 +212,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="459">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
@@ -204,24 +244,56 @@
         <state line="14" column="31" selection-start="325" selection-end="325" vertical-scroll-proportion="0.30375427" vertical-offset="60" max-vertical-offset="714" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/test.model.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="23" selection-start="89" selection-end="89" vertical-scroll-proportion="0.11604095" vertical-offset="0" max-vertical-offset="586" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.inc">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/aeon.loader.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="54" selection-start="437" selection-end="437" vertical-scroll-proportion="0.36177474" vertical-offset="43" max-vertical-offset="935" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="525" selection-end="525" vertical-scroll-proportion="0.4450262" vertical-offset="0" max-vertical-offset="573">
+        <state line="15" column="0" selection-start="525" selection-end="525" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="459">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/aeon.engine.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="16" selection-start="40" selection-end="40" vertical-scroll-proportion="0.07580825" vertical-offset="0" max-vertical-offset="897">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/aeon.headers.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="33" selection-start="81" selection-end="81" vertical-scroll-proportion="0.05685619" vertical-offset="0" max-vertical-offset="897">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/aeon.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.19398" vertical-offset="1071" max-vertical-offset="2244">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/aeon.loader.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="39" selection-start="387" selection-end="387" vertical-scroll-proportion="0.28428093" vertical-offset="0" max-vertical-offset="897">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/aeon.router.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="25" selection-start="52" selection-end="52" vertical-scroll-proportion="0.05685619" vertical-offset="17" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/aeon.auth.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="13" selection-start="1498" selection-end="1498" vertical-scroll-proportion="1.0613155" vertical-offset="0" max-vertical-offset="1207">
           <folding />
         </state>
       </provider>
