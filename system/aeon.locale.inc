@@ -3,6 +3,7 @@
 /**
  * Class Locale
  * Класс по работе с языками
+ * TODO: Сделать возможным работать без redirect если один язык
  */
 class Locale {
 	public static $self;
@@ -65,7 +66,7 @@ class Locale {
      * Если Язык не определен или язык не поддерживается делаем redirect к ближайшему подходящему
      */
     public function localeCheck(){
-        $language;
+        $language = NULL;
         preg_match('/^\/([a-z]{2}\-[a-z]{2})[\/]{1}(.*)/', $_SERVER['REQUEST_URI'], $language);
         $keys = array_keys($this->getSupportedLanguages());
         $default = array_keys($this->getUserLanguages());
@@ -88,7 +89,7 @@ class Locale {
      * @return string
      */
     public function getCurrentLanguage() {
-        $language;
+        $language = NULL;
         preg_match('/([a-z]{2}\-[a-z]{2})(.*)/', $_SERVER['REQUEST_URI'], $language);
         return (substr($language[1], 0, 2).'-'.strtoupper(substr($language[1], 3, 2)));
     }

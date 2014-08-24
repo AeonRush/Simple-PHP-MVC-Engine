@@ -23,10 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="default.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="default.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/layout/default/default.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.58938247" vertical-offset="1938" max-vertical-offset="4709">
+            <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="4709">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aeon.locale.inc" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/system/aeon.locale.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="91" column="24" selection-start="2764" selection-end="2764" vertical-scroll-proportion="2.1758087" vertical-offset="0" max-vertical-offset="2907">
               <folding />
             </state>
           </provider>
@@ -55,7 +64,6 @@
         <option value="$PROJECT_DIR$/system/aeon.headers.inc" />
         <option value="$PROJECT_DIR$/system/aeon.router.inc" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/system/aeon.locale.inc" />
         <option value="$PROJECT_DIR$/system/aeon.engine.inc" />
         <option value="$PROJECT_DIR$/application/home.fragment/home.fragment.inc" />
         <option value="$PROJECT_DIR$/application/home.fragment/view/index.view.phtml" />
@@ -64,6 +72,7 @@
         <option value="$PROJECT_DIR$/layout/default/default.layout.phtml" />
         <option value="$PROJECT_DIR$/p.php" />
         <option value="$PROJECT_DIR$/layout/default/default.css" />
+        <option value="$PROJECT_DIR$/system/aeon.locale.inc" />
       </list>
     </option>
   </component>
@@ -268,16 +277,37 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="1">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+      <is-preview-enabled value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19599578" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="375" y="528" width="1440" height="238" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1640625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -412,13 +442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/aeon.locale.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="26" selection-start="1593" selection-end="1661" vertical-scroll-proportion="0.36008918" vertical-offset="663" max-vertical-offset="2890">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/layout/default/default.layout.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="80" column="115" selection-start="3350" selection-end="3350" vertical-scroll-proportion="0.6020067" vertical-offset="820" max-vertical-offset="1717">
@@ -456,7 +479,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/layout/default/default.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.58938247" vertical-offset="1938" max-vertical-offset="4709">
+        <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="4709">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/aeon.locale.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="24" selection-start="2764" selection-end="2764" vertical-scroll-proportion="2.1758087" vertical-offset="0" max-vertical-offset="2907">
           <folding />
         </state>
       </provider>
