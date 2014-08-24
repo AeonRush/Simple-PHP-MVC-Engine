@@ -10,7 +10,8 @@ final class app {
 	private static $auth;
     private static $router;
     private static $config;
-    public static function init(){
+    private static $locale;
+    public static function getInstance(){
 		if(self::$app != NULL) return self::$app; 
         self::$app = new self();
         
@@ -22,9 +23,11 @@ final class app {
         }
 	    catch(Exception $e){ /* Do nothing */ }
 
-        self::$auth = \Auth::init();
-        self::$router = \Router::init();
-        
+        self::$auth = \Auth::getInstance();
+        self::$locale = \Locale::getInstance(); 
+        self::$locale->localeCheck();
+
+        self::$router = \Router::getInstance();
         return self::$app;
 	}
     public static function getUser(){
@@ -36,8 +39,11 @@ final class app {
     public static function getRole(){
         return self::$auth->getRole();
     }
-    public static function getParam($key) {
+    public static function getParam($key){
         return self::$config[$key];
+    }
+    public static function locale(){
+        return self::$locale;
     }
 };
 

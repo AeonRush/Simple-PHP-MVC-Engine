@@ -6,7 +6,7 @@
  */
 class AEONLoader {
 	public static $loader;
-    public static function init() {
+    public static function getInstance() {
 		if (self::$loader == NULL) self::$loader = new self();
 		return self::$loader;
 	}
@@ -36,6 +36,6 @@ class AEONLoader {
     public function evas($class) {
         include (__ROOT__.'/system/eva/'.$class.'.class.inc');
     }
-}; AEONLoader::init();
+}; AEONLoader::getInstance();
 
 /// 2014 | AeonRUSH |

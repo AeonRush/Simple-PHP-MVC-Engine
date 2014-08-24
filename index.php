@@ -15,8 +15,9 @@ ob_start();
     include(__SYSTEM__.'/aeon.auth.inc');
     include(__SYSTEM__.'/aeon.router.inc');
     include(__SYSTEM__.'/aeon.loader.inc');
+    include(__SYSTEM__.'/aeon.locale.inc');
     include(__SYSTEM__.'/aeon.engine.inc');
 ob_end_clean();
-\app::init();
+\app::getInstance();
 
 /// 2014 | AeonRUSH |

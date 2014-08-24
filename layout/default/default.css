@@ -240,6 +240,13 @@ footer * {
 footer > div > a {
     padding-right: 5px;
 }
+footer select {
+    border:  none;
+    padding: 5px;
+    display: block;
+    margin-top: 10px;
+    background-color: rgb(39, 39, 39);
+}
 
 @media screen and (max-width: 1024px) {
     @-ms-viewport{

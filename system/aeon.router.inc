@@ -9,7 +9,7 @@ class Router {
     private $rules = array();
     private $httpMethod = 'get';
 	
-    public static function init(){
+    public static function getInstance(){
 		if(self::$self == NULL) self::$self = new self();
         return self::$self;
     }
@@ -27,6 +27,7 @@ class Router {
         } else {
             $this->getRoutes(__APP__.'/*/routes.unsecure.only.inc');
         };
+            
         foreach($this->rules as $template => $params) {
             $url = explode(':', $template);
 
@@ -34,11 +35,13 @@ class Router {
             if($url[1] !== $this->httpMethod) continue;
 
 			$matches = array();
-            if(preg_match('/'.str_replace('/', '\/', $url[0]).'/', $_SERVER['REQUEST_URI'], $matches) == true) {
+            $url = str_replace('^', '^([a-z]{2}\-[a-z]{2}[/]{1})', $url[0]);
+
+            if(preg_match('/'.str_replace('/', '\/', $url).'/', $_SERVER['REQUEST_URI'], $matches) == true) {
 				$e = explode('?', $params);	
                 $i = sizeof($matches);
-				for($j=1;$j<$i; ++$j){ $e[1] = str_replace('$'.$j, $matches[$j], $e[1]); };
-			
+				for($j=1;$j<$i; ++$j){ $e[1] = str_replace('$'.$j, $matches[$j+1], $e[1]); };
+
 				$e[1] = strtr( mysql_escape_string(urldecode( $e[1] ) ), array('=' => '":"', '&' => '","'));
 				if(isset($e[1]{5})) $_GET = array_merge($_GET, json_decode('{"'.$e[1].'"}', true));
 				
