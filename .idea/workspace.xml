@@ -41,10 +41,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aeon.locale.inc" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="aeon.locale.inc" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/aeon.locale.inc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="148" column="94" selection-start="4443" selection-end="4443" vertical-scroll-proportion="0.6399108" vertical-offset="1942" max-vertical-offset="2907">
+            <state line="97" column="0" selection-start="2913" selection-end="2913" vertical-scroll-proportion="-11.615385" vertical-offset="1347" max-vertical-offset="2890">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aeon.engine.inc" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/system/aeon.engine.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="0" selection-start="842" selection-end="842" vertical-scroll-proportion="0.4503902" vertical-offset="38" max-vertical-offset="935">
               <folding />
             </state>
           </provider>
@@ -72,9 +81,9 @@
         <option value="$PROJECT_DIR$/system/aeon.auth.inc" />
         <option value="$PROJECT_DIR$/system/aeon.headers.inc" />
         <option value="$PROJECT_DIR$/system/aeon.router.inc" />
-        <option value="$PROJECT_DIR$/system/aeon.engine.inc" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/system/aeon.locale.inc" />
+        <option value="$PROJECT_DIR$/system/aeon.engine.inc" />
       </list>
     </option>
   </component>
@@ -284,11 +293,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/aeon.engine.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="16" selection-start="40" selection-end="40" vertical-scroll-proportion="0.07580825" vertical-offset="0" max-vertical-offset="897" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/aeon.headers.inc">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="33" selection-start="81" selection-end="81" vertical-scroll-proportion="0.05685619" vertical-offset="0" max-vertical-offset="897" />
@@ -325,7 +329,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/system/aeon.locale.inc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="94" selection-start="4443" selection-end="4443" vertical-scroll-proportion="0.6399108" vertical-offset="1942" max-vertical-offset="2907">
+        <state line="97" column="0" selection-start="2913" selection-end="2913" vertical-scroll-proportion="-11.615385" vertical-offset="1347" max-vertical-offset="2890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/aeon.engine.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="842" selection-end="842" vertical-scroll-proportion="0.4503902" vertical-offset="38" max-vertical-offset="935">
           <folding />
         </state>
       </provider>

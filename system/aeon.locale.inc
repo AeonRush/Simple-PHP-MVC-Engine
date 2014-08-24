@@ -95,7 +95,6 @@ class Locale {
 
     /**
      * Функция возвращает все языки
-     * !!! К удалению!
      * @return mixed
      */
     public function getAllLanguages(){
