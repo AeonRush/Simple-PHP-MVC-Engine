@@ -1,21 +1,4 @@
-﻿@font-face {
-    font-family: 'Neo Sans';
-    src: url('/public/font/NeoSansPro-Regular.woff') format('woff'), url('/public/font/NeoSansPro-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Neo Sans Light';
-    src: url('/public/font/NeoSansPro-Light.woff') format('woff'), url('/public/font/NeoSansPro-Light.ttf') format('truetype');
-    font-weight: lighter;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'UnSeen';
-    src: url('/public/font/unseen.woff') format('woff'), url('/public/font/unseen.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+﻿
 .font-normal, .font-normal * {
     font-family: "Neo Sans", "Segoe UI", "Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,"sans-serif" !important;
     font-weight: normal !important;
@@ -37,9 +20,6 @@
 }
 body {
     font-size: 14px;
-}
-.emphasis, .emphasis * {
-    font-size: 100%;
 }
 a {
 	cursor: pointer;
@@ -82,15 +62,11 @@ img {
 }
 
 h1{
-	font-size: 300%;
+	font-size: 450%;
 	line-height: 1.1em;
-
     padding: 10px 0px 10px 0px;
-    /*
-    color: #FD5412;
-    */
-    text-shadow: 0px 1px 2px rgb(39, 39, 39);
     display: inline-block;
+    font-family: "Helvetica Ultra Light";
 }
 h2 {
 	font-size: 200%;
@@ -99,7 +75,7 @@ h2 {
     display: inline-block;
 }
 body > * > *, .center {
-    padding: 50px 20px 50px 20px;
+    padding: 75px 20px 75px 20px;
     max-width: 1600px;
     width: 100%;
     margin-left: auto;
@@ -107,13 +83,6 @@ body > * > *, .center {
 }
 .center {
     padding: 0px;
-}
-.table {
-    display: table;
-    width: 100%;
-}
-.table > * {
-    display: table-cell;
 }
 .font-white, .font-white * {
     color: rgb(250, 250, 250);
@@ -146,62 +115,29 @@ header > nav > a {
     padding: 10px;
     transition-duration: .5s;
 }
-header > nav > a:hover, header > nav > a.active {
+header > nav > a:hover{
     color: rgb(250, 250, 250);
     transition-duration: 1s;
-}
-header > nav > a:first-child.active, header > nav > a:first-child:hover {
-    background-color: #fd5412;
-}
-header > nav > a:nth-child(2).active, header > nav > a:nth-child(2):hover {
-    background-color: rgb(210, 0, 0);
-}
-header > nav > a:nth-child(3).active, header > nav > a:nth-child(3):hover {
-    background-color: rgb(169, 32, 169);
-}
-header > nav > a:nth-child(4).active, header > nav > a:nth-child(4):hover {
-    background-color: rgb(10, 210, 110);
-}
-header > nav > a.active:hover {
-    background-color: rgb(250, 250, 250);
-    color: rgb(39, 39, 39);
 }
 /*
     Content    
 */
-.avatar {
-    width: 300px;
+.logo {
+        background-image: linear-gradient(45deg, rgb(110, 11, 86) 0%, rgb(39, 39, 39) 100%);
+    background-color: rgb(137, 61, 186);
 }
-.avatar > img {
-    border-radius: 1280px;
-    max-width: 300px;
+.logo h1 {
+    padding: 20px 50px 20px 50px;
+    border: 3px rgb(250, 250, 250) solid;
+    border-radius: 3px;
+    text-shadow: 0px 1px 2px rgb(0,0,0);
+    box-shadow: 0px 1px 2px rgb(0,0,0), 0px 1px 2px rgb(0,0,0) inset;
 }
-section > * {
-    width: 100%;
-    max-width: 100%;
+header nav a:first-child {
+    background-color: rgb(110, 11, 16);
 }
-article.center {
-    width: 100%;
-    max-width: 100%;
-}
-article .table > *:last-child {
-    padding-left: 50px;
-}
-article.center {
-    padding: 50px 20px 50px 20px;
-}
-article.center > *, p {
-    margin-top: 1.7em;
-    margin-bottom: 1.7em;
-    max-width: 1600px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5em; 
-}
-
 /*
-    Footer    
+    Footer
 */
 .social-share {
     background-color: rgb(69, 69, 69);
@@ -247,7 +183,6 @@ footer select {
     margin-top: 10px;
     background-color: rgb(39, 39, 39);
 }
-
 @media screen and (max-width: 1024px) {
     @-ms-viewport{
         width: 320px;
@@ -329,5 +264,9 @@ footer select {
         height: 240px !important;
         transition-duration: .4s;
         box-shadow: 0px 320px 480px 240px rgb(250, 250, 250), 0px 2px 3px rgb(0, 0, 0);
+    }
+    .logo h1 {
+        padding: 0px;
+        border: none;
     }
 }

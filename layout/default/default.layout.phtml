@@ -20,24 +20,33 @@
 
     <!--- Styles -->
     <link rel="stylesheet" href="/layout/default/default.css">
-	<?php  $j = sizeof($this['css']['src']); for($i=0;$i<$j; ++$i) { ?><link rel="stylesheet" href="<?php echo $this['css']['src'][$i]?>"><?php } ?>
-	<?php if(sizeof($this['css']['inline']) > 0) { ?><style><?php echo join ('', $this['css']['inline'])?></style><?php } ?>
+    <style>
+        @font-face {
+            font-family: 'Neo Sans';
+            src: url('/public/font/NeoSansPro-Regular.woff') format('woff'), url('/public/font/NeoSansPro-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Neo Sans Light';
+            src: url('/public/font/NeoSansPro-Light.woff') format('woff'), url('/public/font/NeoSansPro-Light.ttf') format('truetype');
+            font-weight: lighter;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'UnSeen';
+            src: url('/public/font/unseen.woff') format('woff'), url('/public/font/unseen.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Helvetica Ultra Light';
+            src: url('/public/font/helvetica-neue-ultra-light.woff') format('woff'), url('/public/font/helvetica-neue-ultra-light.ttf') format('truetype');
+            font-weight: lighter;
+            font-style: normal;
+        }
+    </style>
 
-	<!--- JavaScript -->
-    <script src="/public/javascript/jquery-2.1.1.min.js"></script>
-    <?php  $j = sizeof($this['javascript']['src']); for($i=0;$i<$j; ++$i) { ?><script src="<?php echo $this['javascript']['src'][$i]?>"></script><?php } ?>
-	<?php if(sizeof($this['javascript']['inline']) > 0) { ?><script><?php echo join ('', $this['javascript']['inline'])?></script><?php } ?>
-    <script>
-        $(document).ready(function(){
-            var page = location.pathname.substr(7);
-            page = page.substr(1);
-            page = (page.substr(0, page.indexOf('/')));
-            page = (page === '' ? 'home' : page);
-            var color = $("#" + page).addClass("active").css("backgroundColor");
-            $(".social-share").css("borderColor", color);
-            $("section > article:nth-child(2)").css("backgroundColor", color);
-        });
-    </script>
 </head>
 <body>
 <!--- Header section -->
@@ -51,9 +60,9 @@
 	</nav>
 </header>
 <!--- Content section -->
-<section><?php echo $this->content?></section>
+<?php echo $this->content?>
 <section class="font-white font-light social-share">
-    <article class="center">
+    <article>
         <div>
             <h2>Будьте на связи</h2>
             <nav>
@@ -68,12 +77,20 @@
 	<div>
 		&copy; <?php echo Date('Y')?><a href="http://aeonrush.com/">AeonRush</a>
         <select onchange="location = '/' + this.value.toLowerCase() + location.pathname.substr(6)">
-            <?php $c = \app::locale()->getCurrentLanguage(); foreach(\app::locale()->getSupportedLanguages() as $k => $v) { ?>>
-                <option value="<?php echo $k?>" <?php if($c == $k) echo " selected"?>><?php echo $v['language-name']?></option>
+            <?php $c = \app::locale()->getCurrentLanguage(); foreach(\app::locale()->getSupportedLanguages() as $k => $v) { ?>
+                <option value="<?php echo $k?>" <?php if($c == $k) echo "selected"?>><?php echo $v['language-name']?></option>
             <?php }; ?>
         </select>
 	</div>
 </footer>
 
+<!--- Styles -->
+<?php  $j = sizeof($this['css']['src']); for($i=0;$i<$j; ++$i) { ?><link rel="stylesheet" href="<?php echo $this['css']['src'][$i]?>"><?php } ?>
+<?php if(sizeof($this['css']['inline']) > 0) { ?><style><?php echo join ('', $this['css']['inline'])?></style><?php } ?>
+
+<!--- JavaScript -->
+<script src="/public/javascript/jquery-2.1.1.min.js"></script>
+<?php  $j = sizeof($this['javascript']['src']); for($i=0;$i<$j; ++$i) { ?><script src="<?php echo $this['javascript']['src'][$i]?>"></script><?php } ?>
+<?php if(sizeof($this['javascript']['inline']) > 0) { ?><script><?php echo join ('', $this['javascript']['inline'])?></script><?php } ?>
 </body>
 </html>

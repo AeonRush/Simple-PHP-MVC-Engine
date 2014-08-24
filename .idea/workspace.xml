@@ -23,37 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="aeon.auth.inc" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/aeon.auth.inc">
+      <file leaf-file-name="default.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/layout/default/default.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="13" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.0" vertical-offset="310" max-vertical-offset="1207">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="2" selection-start="572" selection-end="572" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="476">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aeon.locale.inc" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/aeon.locale.inc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="0" selection-start="2913" selection-end="2913" vertical-scroll-proportion="-11.615385" vertical-offset="1347" max-vertical-offset="2890">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aeon.engine.inc" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/system/aeon.engine.inc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="842" selection-end="842" vertical-scroll-proportion="0.4503902" vertical-offset="38" max-vertical-offset="935">
+            <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.58938247" vertical-offset="1938" max-vertical-offset="4709">
               <folding />
             </state>
           </provider>
@@ -84,6 +57,13 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/system/aeon.locale.inc" />
         <option value="$PROJECT_DIR$/system/aeon.engine.inc" />
+        <option value="$PROJECT_DIR$/application/home.fragment/home.fragment.inc" />
+        <option value="$PROJECT_DIR$/application/home.fragment/view/index.view.phtml" />
+        <option value="$PROJECT_DIR$/application/home.page/view/index.view.phtml" />
+        <option value="$PROJECT_DIR$/application/home.fragment/view/style.css" />
+        <option value="$PROJECT_DIR$/layout/default/default.layout.phtml" />
+        <option value="$PROJECT_DIR$/p.php" />
+        <option value="$PROJECT_DIR$/layout/default/default.css" />
       </list>
     </option>
   </component>
@@ -152,6 +132,104 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home.page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home.page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home.fragment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home.fragment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -191,7 +269,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -313,30 +391,72 @@
         <state line="4" column="25" selection-start="52" selection-end="52" vertical-scroll-proportion="0.05685619" vertical-offset="17" max-vertical-offset="1326" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/aeon.auth.inc">
+    <entry file="file://$PROJECT_DIR$/system/aeon.engine.inc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="13" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.0" vertical-offset="310" max-vertical-offset="1207">
+        <state line="26" column="0" selection-start="842" selection-end="842" vertical-scroll-proportion="0.4503902" vertical-offset="38" max-vertical-offset="935">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="2" selection-start="572" selection-end="572" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="476">
+        <state line="16" column="2" selection-start="572" selection-end="572" vertical-scroll-proportion="0.303233" vertical-offset="0" max-vertical-offset="897">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/aeon.auth.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="13" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.71571904" vertical-offset="310" max-vertical-offset="1207">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/aeon.locale.inc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="0" selection-start="2913" selection-end="2913" vertical-scroll-proportion="-11.615385" vertical-offset="1347" max-vertical-offset="2890">
+        <state line="58" column="26" selection-start="1593" selection-end="1661" vertical-scroll-proportion="0.36008918" vertical-offset="663" max-vertical-offset="2890">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/aeon.engine.inc">
+    <entry file="file://$PROJECT_DIR$/layout/default/default.layout.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="842" selection-end="842" vertical-scroll-proportion="0.4503902" vertical-offset="38" max-vertical-offset="935">
+        <state line="80" column="115" selection-start="3350" selection-end="3350" vertical-scroll-proportion="0.6020067" vertical-offset="820" max-vertical-offset="1717">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home.page/view/index.view.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="53" selection-start="392" selection-end="392" vertical-scroll-proportion="0.22742476" vertical-offset="0" max-vertical-offset="897">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home.fragment/view/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="275" selection-end="275" vertical-scroll-proportion="0.18418202" vertical-offset="0" max-vertical-offset="923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home.fragment/view/index.view.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="26" selection-start="123" selection-end="123" vertical-scroll-proportion="0.07580825" vertical-offset="0" max-vertical-offset="897">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home.fragment/home.fragment.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="5" selection-start="303" selection-end="303" vertical-scroll-proportion="0.22742476" vertical-offset="0" max-vertical-offset="897">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/default/default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.58938247" vertical-offset="1938" max-vertical-offset="4709">
           <folding />
         </state>
       </provider>
