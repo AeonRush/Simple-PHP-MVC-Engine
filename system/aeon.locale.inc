@@ -68,6 +68,13 @@ class Locale {
     public function localeCheck(){
         $language = NULL;
         preg_match('/^\/([a-z]{2}\-[a-z]{2})[\/]{1}(.*)/', $_SERVER['REQUEST_URI'], $language);
+
+        if(sizeof(\app::getParam('eva:languages')) == 1) {
+            if(empty($language)) return;
+            header('Location: '.substr($_SERVER['REQUEST_URI'], 6));
+            exit;    
+        };
+        
         $keys = array_keys($this->getSupportedLanguages());
         $default = array_keys($this->getUserLanguages());
 
@@ -89,6 +96,10 @@ class Locale {
      * @return string
      */
     public function getCurrentLanguage() {
+        if(sizeof(\app::getParam('eva:languages')) == 1) {
+            $t = \app::getParam('eva:languages');
+            return $t[0];
+        };
         $language = NULL;
         preg_match('/([a-z]{2}\-[a-z]{2})(.*)/', $_SERVER['REQUEST_URI'], $language);
         return (substr($language[1], 0, 2).'-'.strtoupper(substr($language[1], 3, 2)));

@@ -35,7 +35,7 @@ class Router {
             if($url[1] !== $this->httpMethod) continue;
 
 			$matches = array();
-            $url = str_replace('^', '^([a-z]{2}\-[a-z]{2}[/]{1})', $url[0]);
+            $url = str_replace('^', '^([a-z]{2}\-[a-z]{2}[/]{1})?', $url[0]);
 
             if(preg_match('/'.str_replace('/', '\/', $url).'/', $_SERVER['REQUEST_URI'], $matches) == true) {
 				$e = explode('?', $params);	
