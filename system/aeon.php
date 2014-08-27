@@ -5,7 +5,6 @@
  * @param $v
  * @return int
  */
- echo '123';
 function crc32_fix($v){
 	$v = crc32($v);
 	return ($v < 0) ? ($v + 4294967296) : $v;
