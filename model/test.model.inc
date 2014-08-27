@@ -1,7 +1,4 @@
 <?php
 
-final class TestModel {
-    public function __construct(){
-        echo __CLASS__;
-    }
-}
+namespace Model;
+final class Product { /* Almost always do nothing */ }

@@ -6,7 +6,7 @@
  */
 class AEONLoader {
 	public static $loader;
-    public static function getInstance() {
+    public static function init() {
 		if (self::$loader == NULL) self::$loader = new self();
 		return self::$loader;
 	}
@@ -15,12 +15,8 @@ class AEONLoader {
 	}
     public function preprocess($class){
         if(class_exists($class)) return;
-        $temp = explode('/', strtolower(strtr($class, '\\', '/')));
-        $class = array();
-        foreach ($temp as $k=>$v){ 
-            if(!empty($v)) $class[] = $v; 
-        };
-        unset($temp);
+        $class = array_clean(  explode('/', strtolower(strtr($class, '\\', '/'))) );
+
         $class[0] .= 's';
         $this->$class[0]($class[1]);
     }
@@ -36,6 +32,6 @@ class AEONLoader {
     public function evas($class) {
         include (__ROOT__.'/system/eva/'.$class.'.class.inc');
     }
-}; AEONLoader::getInstance();
+}; AEONLoader::init();
 
 /// 2014 | AeonRUSH |

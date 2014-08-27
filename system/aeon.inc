@@ -10,6 +10,15 @@ function crc32_fix($v){
 	return ($v < 0) ? ($v + 4294967296) : $v;
 };
 
+function array_clean($a) {
+    $class = array();
+    foreach ($a as $k=>$v){
+        if(!empty($v)) $class[] = $v;
+    };
+    unset($a);
+    return $class;
+}
+
 function buildURL($new){ 
 	$params = $_GET;
 	$postfix = '/?';
