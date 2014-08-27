@@ -20,12 +20,12 @@ class Router {
         
 		$_SERVER['REQUEST_URI'] = iconv('cp1251', 'utf-8', substr($_SERVER['REQUEST_URI'], ($_SERVER['REQUEST_URI'][1] == '?') ? 2 : 1));
         
-        $this->getRoutes(__APP__.'/*/routes.inc');
+        $this->getRoutes(__APP__.'/*/routes.php');
         
         if(\app::isAuth()) {
-            $this->getRoutes(__APP__.'/*/routes.'.\app::getRole().'.inc');
+            $this->getRoutes(__APP__.'/*/routes.'.\app::getRole().'.php');
         } else {
-            $this->getRoutes(__APP__.'/*/routes.unsecure.only.inc');
+            $this->getRoutes(__APP__.'/*/routes.unsecure.only.php');
         };
             
         foreach($this->rules as $template => $params) {

@@ -3,8 +3,8 @@
 error_reporting(0);
 session_start();
 ob_start();
-include(__DIR__.'/system/aeon.inc');
-include(__DIR__.'/system/aeon.headers.inc');
+include(__DIR__.'/system/aeon.php');
+include(__DIR__.'/system/aeon.headers.php');
 
 $__mime = array(
 	'css'	=> 'text/css',

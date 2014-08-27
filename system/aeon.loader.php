@@ -21,16 +21,16 @@ class AEONLoader {
         $this->$class[0]($class[1]);
     }
     public function pages($class) {
-        include (__APP__.'/'.$class.'.page/'.$class.'.page.inc');
+        include (__APP__.'/'.$class.'.page/'.$class.'.page.php');
     }
     public function fragments($class) {
-        include (__APP__.'/'.$class.'.fragment/'.$class.'.fragment.inc');
+        include (__APP__.'/'.$class.'.fragment/'.$class.'.fragment.php');
     }
     public function models($class) {
-        include (__ROOT__.'/model/'.$class.'.model.inc');
+        include (__ROOT__.'/model/'.$class.'.model.php');
     }
     public function evas($class) {
-        include (__ROOT__.'/system/eva/'.$class.'.class.inc');
+        include (__ROOT__.'/system/eva/'.$class.'.class.php');
     }
 }; AEONLoader::init();
 
