@@ -1,38 +1,84 @@
 <?php
 namespace Eva;
+/**
+ * Class ActiveRecord
+ * TODO : Закончить код
+ * @package Eva
+ */
 abstract class ActiveRecord extends Eva {
+    /**
+     * Магическая функция
+     * @param $f
+     * @param $a
+     * @return $this|void
+     */
     public function __call($f, $a) {
-        $this->$f = array($a[0]);
+        $this->$f = array($a[0], $a[1]);
         return $this;
     }
+
+    /**
+     * Очистка добавленных параметров
+     * @return $this
+     */
     public function cleanup(){
         $this->__data__ = array();
         return $this;
     }
+
+    /**
+     * Задаёт Limit и Offset для запросов
+     * @param $l
+     * @param null $o
+     * @return $this
+     */
     public function limit($l, $o = NULL) {
         $this->limit = array($l, PDO::PARAM_INT);
         if($o != NULL) $this->offset = array($o, PDO::PARAM_INT);
         return $this;
     }
+
+    /**
+     * Задает Offset
+     * @param $o
+     * @return $this
+     */
     public function offset($o) {
         $this->offset = array($o, PDO::PARAM_INT);
         return $this;
     }
-    public function select($what = '*'){
 
-        $statement = 'SELECT '.$what.' FROM '.$this->instance;
+    /**
+     * Выборка из БД
+     * @param string $what
+     * @return null
+     */
+    public function select($what = '*'){
+        return $this->exec('SELECT '.$what.' FROM '.$this->instance);
+    }
+    public function delete() {
+        return $this->exec('DELETE FROM '.$this->instance);
+    }
+
+    /**
+     * @param $statement
+     * @return null
+     */
+    protected function exec($statement){
         unset($this->instance);
 
+        $this->where = $this->where[0];
         foreach($this->__data__ as $k => $v) {
             if(!is_array($v[0])) continue;
             if($v[1] == PDO::PARAM_INT) {
                 foreach($v[0] as $k2 => $v2)
                     if(!is_numeric($v2)) return NULL;
             };
-            $this->where = str_replace(':'.$k, join(',', $v[0]), $this->where[0]);
+            $this->where = str_replace(':'.$k, join(',', $v[0]), $this->where);
             unset($this->__data__[$k]);
         };
-        if(isset($this->where{7}))
+
+        if(isset($this->where{4}))
             $statement .= ' WHERE '.$this->where;
         unset($this->where);
 
@@ -48,6 +94,7 @@ abstract class ActiveRecord extends Eva {
                 $statement .= ' LIMIT :limit';
             };
         };
+
         $sth = \app::$db->prepare($statement);
 
         foreach($this->__data__ as $k => $v) {
@@ -57,6 +104,7 @@ abstract class ActiveRecord extends Eva {
         $this->cleanup();
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+
 };
 
 /// 2014 | AeonRUSH |

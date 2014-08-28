@@ -3,7 +3,6 @@
 /**
  * Class Locale
  * Класс по работе с языками
- * TODO: Сделать возможным работать без redirect если один язык
  */
 class Locale {
 	public static $self;

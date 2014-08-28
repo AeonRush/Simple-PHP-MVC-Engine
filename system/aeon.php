@@ -9,14 +9,18 @@ function crc32_fix($v){
 	$v = crc32($v);
 	return ($v < 0) ? ($v + 4294967296) : $v;
 };
-
+/**
+ * Очистка массива от пустых элементов
+ * @param $a
+ * @return array
+ */
 function array_clean($a) {
-    $class = array();
+    $c = array();
     foreach ($a as $k=>$v){
-        if(!empty($v)) $class[] = $v;
+        if(!empty($v)) $c[] = $v;
     };
     unset($a);
-    return $class;
+    return $c;
 }
 
 function buildURL($new){ 
@@ -105,7 +109,11 @@ function text_optimize(&$__content) {
 
 	return $__content;
 };
-
+/**
+ * Оптимизация
+ * @param $__content
+ * @return mixed|string
+ */
 function optimize(&$__content) {
 	/// $__content = preg_replace('/\/\*.*\*\//', '', $__content);
     # $__content = mb_ereg_replace('([^:]\/\/[^\n\r]*(\n|\r\n))', '', $__content);
