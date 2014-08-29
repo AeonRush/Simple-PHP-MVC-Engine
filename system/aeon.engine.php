@@ -10,7 +10,7 @@ final class app {
 	private static $auth;
     private static $router;
     private static $config;
-    private static $locale;
+    private static $local;
     public static function getInstance(){
 		if(self::$app != NULL) return self::$app; 
         self::$app = new self();
@@ -24,8 +24,8 @@ final class app {
 	    catch(Exception $e){ /* Do nothing */ }
 
         self::$auth = \Auth::getInstance();
-        self::$locale = \Locale::getInstance(); 
-        self::$locale->localeCheck();
+        self::$local = \Local::getInstance();
+        self::$local->localeCheck();
 
         self::$router = \Router::getInstance();
         return self::$app;
@@ -43,7 +43,7 @@ final class app {
         return self::$config[$key];
     }
     public static function locale(){
-        return self::$locale;
+        return self::$local;
     }
 };
 

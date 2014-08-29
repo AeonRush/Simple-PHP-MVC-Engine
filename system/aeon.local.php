@@ -4,7 +4,7 @@
  * Class Locale
  * Класс по работе с языками
  */
-class Locale {
+class Local {
 	public static $self;
     public static function getInstance() {
 		if (self::$self == NULL) self::$self = new self();

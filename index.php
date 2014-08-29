@@ -15,7 +15,7 @@ ob_start();
     include(__SYSTEM__.'/aeon.auth.php');
     include(__SYSTEM__.'/aeon.router.php');
     include(__SYSTEM__.'/aeon.loader.php');
-    include(__SYSTEM__.'/aeon.locale.php');
+    include(__SYSTEM__.'/aeon.local.php');
     include(__SYSTEM__.'/aeon.engine.php');
 ob_end_clean();
 \app::getInstance();

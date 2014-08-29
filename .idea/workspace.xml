@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="activerecord.class.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/system/eva/activerecord.class.php">
+      <file leaf-file-name="aeon.engine.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/system/aeon.engine.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="0" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.31772575" vertical-offset="990" max-vertical-offset="1887">
+            <state line="45" column="27" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.8104794" vertical-offset="38" max-vertical-offset="935">
               <folding />
             </state>
           </provider>
@@ -54,7 +54,6 @@
         <option value="$PROJECT_DIR$/system/aeon.auth.inc" />
         <option value="$PROJECT_DIR$/system/aeon.headers.inc" />
         <option value="$PROJECT_DIR$/system/aeon.router.inc" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/system/aeon.engine.inc" />
         <option value="$PROJECT_DIR$/application/home.fragment/home.fragment.inc" />
         <option value="$PROJECT_DIR$/application/home.fragment/view/index.view.phtml" />
@@ -65,8 +64,10 @@
         <option value="$PROJECT_DIR$/layout/default/default.css" />
         <option value="$PROJECT_DIR$/system/aeon.locale.inc" />
         <option value="$PROJECT_DIR$/system/aeon.php" />
-        <option value="$PROJECT_DIR$/system/aeon.locale.php" />
         <option value="$PROJECT_DIR$/system/eva/activerecord.class.php" />
+        <option value="$PROJECT_DIR$/system/aeon.locale.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/system/aeon.engine.php" />
       </list>
     </option>
   </component>
@@ -103,6 +104,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -145,31 +147,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eva" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Simple-PHP-MVC-Engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,25 +251,26 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/layout/default/default.css">
+    <entry file="file://$PROJECT_DIR$/system/eva/activerecord.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4709">
+        <state line="75" column="0" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1887">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/layout/default/default.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4709">
-          <folding />
-        </state>
+        <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4709" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/layout/default/default.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4709">
-          <folding />
-        </state>
+        <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4709" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/default/default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4709" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
@@ -335,13 +319,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="2" selection-start="572" selection-end="572" vertical-scroll-proportion="0.303233" vertical-offset="0" max-vertical-offset="897">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/layout/default/default.layout.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="80" column="115" selection-start="3350" selection-end="3350" vertical-scroll-proportion="0.6020067" vertical-offset="820" max-vertical-offset="1717" />
@@ -364,23 +341,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/layout/default/default.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.9457259" vertical-offset="1785" max-vertical-offset="4709">
-          <folding />
-        </state>
+        <state line="146" column="1" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.9457259" vertical-offset="1785" max-vertical-offset="4709" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/aeon.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="14" selection-start="2623" selection-end="2623" vertical-scroll-proportion="0.11533052" vertical-offset="1822" max-vertical-offset="2533">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/aeon.locale.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="41" selection-start="904" selection-end="904" vertical-scroll-proportion="0.6822742" vertical-offset="0" max-vertical-offset="3077">
-          <folding />
-        </state>
+        <state line="112" column="14" selection-start="2623" selection-end="2623" vertical-scroll-proportion="0.11533052" vertical-offset="1822" max-vertical-offset="2533" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/eva/eva.class.php">
@@ -392,21 +358,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/test.model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="35" selection-start="59" selection-end="59" vertical-scroll-proportion="0.05685619" vertical-offset="0" max-vertical-offset="897">
-          <folding />
-        </state>
+        <state line="3" column="35" selection-start="59" selection-end="59" vertical-scroll-proportion="0.05685619" vertical-offset="0" max-vertical-offset="897" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/eva/model.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="335" selection-end="335" vertical-scroll-proportion="0.24637681" vertical-offset="0" max-vertical-offset="897">
+        <state line="13" column="0" selection-start="335" selection-end="335" vertical-scroll-proportion="0.24637681" vertical-offset="0" max-vertical-offset="897" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="35" selection-start="649" selection-end="649" vertical-scroll-proportion="0.32218507" vertical-offset="0" max-vertical-offset="897">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/aeon.local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="39" selection-start="172" selection-end="172" vertical-scroll-proportion="0.17056856" vertical-offset="0" max-vertical-offset="3077">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/eva/activerecord.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="0" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.31772575" vertical-offset="990" max-vertical-offset="1887">
+        <state line="78" column="0" selection-start="1846" selection-end="1846" vertical-scroll-proportion="1.4214047" vertical-offset="51" max-vertical-offset="1955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/aeon.engine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="27" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.8104794" vertical-offset="38" max-vertical-offset="935">
           <folding />
         </state>
       </provider>
