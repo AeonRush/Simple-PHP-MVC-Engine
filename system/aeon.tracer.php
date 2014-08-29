@@ -2,11 +2,8 @@
 
 set_error_handler('handler');
 function handler ( $errno , $errstr, $errfile, $errline, $errcontext) {
-
-    echo $errfile;
+    header('Location: /error/');
     exit;
-
-    return true;
 };
 
 /// 2014 | AeonRUSH |
