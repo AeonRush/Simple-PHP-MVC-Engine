@@ -2,7 +2,7 @@
 
 return array(
     /// db connection options
-    'db:name' => 'demo',
+    'db:name' => 'newmarket',
     'db:user' => 'root',
     'db:password' => '123321',
     /// Engine options

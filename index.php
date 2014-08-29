@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(E_NONE);
+error_reporting(E_ALL);
 session_start();
 mb_internal_encoding('UTF-8');
 

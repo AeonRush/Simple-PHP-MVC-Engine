@@ -45,6 +45,10 @@ final class app {
     public static function locale(){
         return self::$local;
     }
+    public static function model($m, $a = NULL) {
+        $m = '\Model\\'.$m;
+        return new $m($a);
+    }
 };
 
 /// 2014 | AeonRUSH |

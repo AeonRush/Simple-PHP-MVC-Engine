@@ -1,4 +1,4 @@
 <?php
 
 namespace Model;
-final class Product { /* Almost always do nothing */ }
+class Test extends \Eva\Model { }
