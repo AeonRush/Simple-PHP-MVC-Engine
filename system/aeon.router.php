@@ -27,7 +27,7 @@ class Router {
         } else {
             $this->getRoutes(__APP__.'/*/routes.unsecure.only.php');
         };
-            
+        
         foreach($this->rules as $template => $params) {
             $url = explode(':', $template);
 

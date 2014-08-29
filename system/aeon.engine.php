@@ -49,6 +49,9 @@ final class app {
         $m = '\Model\\'.$m;
         return new $m($a);
     }
+    public static function sanitize(&$a) {
+        foreach($a as $k => $v) $a[$k] = htmlspecialchars($v);
+    }
 };
 
 /// 2014 | AeonRUSH |

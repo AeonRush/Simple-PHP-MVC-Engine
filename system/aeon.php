@@ -120,6 +120,10 @@ function optimize(&$__content) {
     # $__content = mb_ereg_replace('(\/\*.*\*\/)', '', $__content);
     $__content = mb_ereg_replace('(\s[\s]+)|(\t+)|(\n[\n]*)|(\r[\n]*)|(<!---.*?-->)', '', $__content);
     $__content = preg_replace('/(\xEF\xBB\xBF)+/', '', $__content);
+
+    $__content = str_replace('<![CDATA[', "<![CDATA[\n", $__content);
+    $__content = str_replace('// ]]>', "// ]]>\n", $__content);
+
 	return $__content;
 };
 

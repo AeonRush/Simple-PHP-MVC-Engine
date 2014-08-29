@@ -63,7 +63,7 @@ abstract class ActiveRecord extends Eva {
      * @return null
      */
     public function select($what = '*'){
-        return $this->exec('SELECT '.$what.' FROM '.$this->instance);
+        return $this->exec('SELECT SQL_CALC_FOUND_ROWS '.$what.' FROM '.$this->instance);
     }
 
     /**
@@ -120,6 +120,7 @@ abstract class ActiveRecord extends Eva {
      * @return null
      */
     protected function exec($statement){
+        $return = array();
         /**
          * Блок подготовки WHERE
          */
@@ -153,7 +154,9 @@ abstract class ActiveRecord extends Eva {
              * Если есть Offset и Limit то Limit считается "страницей", т.е.
              * Limit = Limit * Offset
              */
+            $return['limit'] = $this->limit[0];
             if($this->offset) {
+               $return['offset'] = $this->offset[0];
                 $this->__data__['limit'][0] = $this->limit[0] * $this->offset[0];
                 $statement .= ' LIMIT :limit, :offser';
             } else {
@@ -173,10 +176,11 @@ abstract class ActiveRecord extends Eva {
          * Если ошибок нет, выводим результат
          */
         if($sth->errorCode() == '00000') {
-            return $sth->fetchAll(PDO::FETCH_ASSOC);
+            $return['result'] = $sth->fetchAll(PDO::FETCH_ASSOC);
+            $return['total'] = \app::$db->query('SELECT FOUND_ROWS()')->fetch(PDO::FETCH_COLUMN);
+            return $return;
         };
-        // TODO Написать класс логов с возможностью отправки логов по email
-        error_log('PDO::Error with statement '.$statement);
+        throw \Exception('PDO::Error');
     }
 
 };

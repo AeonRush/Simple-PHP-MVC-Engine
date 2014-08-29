@@ -2,7 +2,8 @@
 namespace Page;
 class Home extends \Eva\Page {
     public function index(){
-        $this->view->title = $_GET['id'];
+        $data = \app::modele('test')->where('id = 45324')->select('*');
+        $this->view->title = 'Simple MVC PHP Engine';
         $this->view->render('index');
     }
 };
