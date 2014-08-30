@@ -11,7 +11,8 @@ define('__HOST__', (empty($_SERVER['REQUEST_SCHEME']) ? 'http' : $_SERVER['REQUE
 
 ob_start();
     include(__SYSTEM__.'/aeon.php');
-    include(__SYSTEM__.'/aeon.tracer.php');
+    # TODO Finalize the tracer
+    # include(__SYSTEM__.'/aeon.tracer.php');
     include(__SYSTEM__.'/aeon.headers.php');
     include(__SYSTEM__.'/aeon.auth.php');
     include(__SYSTEM__.'/aeon.router.php');
