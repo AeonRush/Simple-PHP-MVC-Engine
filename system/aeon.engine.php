@@ -50,7 +50,13 @@ final class app {
         return new $m($a);
     }
     public static function sanitize(&$a) {
-        foreach($a as $k => $v) $a[$k] = htmlspecialchars($v);
+        foreach($a as $k => $v) {
+            if(is_array($v)) {
+                self::sanitize($v);
+                continue;
+            }
+            $a[$k] = htmlspecialchars($v);   
+        }
     }
 };
 
