@@ -27,10 +27,7 @@ final class app {
         self::$local = \Local::getInstance();
         self::$local->localeCheck();
 
-        # self::$router = \Router::getInstance();
-        $data = array('name' => '"Alexander<script>alert()</script>', 'layer2' => array('name2' => 'Alex<script>alert(2)</script>'));
-        self::sanitize($data);
-        print_r($data);
+        self::$router = \Router::getInstance();
         return self::$app;
 	}
     public static function getUser(){
