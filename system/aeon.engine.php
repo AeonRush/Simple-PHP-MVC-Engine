@@ -27,7 +27,10 @@ final class app {
         self::$local = \Local::getInstance();
         self::$local->localeCheck();
 
-        self::$router = \Router::getInstance();
+        # self::$router = \Router::getInstance();
+        $data = array('name' => '"Alexander<script>alert()</script>', 'layer2' => array('name2' => 'Alex<script>alert(2)</script>'));
+        self::sanitize($data);
+        print_r($data);
         return self::$app;
 	}
     public static function getUser(){
@@ -52,7 +55,7 @@ final class app {
     public static function sanitize(&$a) {
         foreach($a as $k => $v) {
             if(is_array($v)) {
-                self::sanitize($v);
+                self::sanitize($a[$k]);
                 continue;
             }
             $a[$k] = htmlspecialchars($v);   
