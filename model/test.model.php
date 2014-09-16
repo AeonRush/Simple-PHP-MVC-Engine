@@ -1,4 +1,4 @@
 <?php
 
 namespace Model;
-class Test extends \Eva\Model { }
+class Test extends \Eva\ActiveRecord { }

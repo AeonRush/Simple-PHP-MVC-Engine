@@ -6,6 +6,14 @@ namespace Eva;
  * @package Eva
  */
 abstract class ActiveRecord extends Eva {
+    protected $db;
+    public function __construct(){
+        $temp = array_clean( explode('\\', get_called_class()) );
+        $this->instance = strtolower($temp[1]);
+        unset($temp);
+        $this->db = \app::$db;
+    }
+
     /**
      * Магическая функция
      * @param $f
