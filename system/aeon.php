@@ -23,20 +23,26 @@ function array_clean($a) {
     return $c;
 }
 
-function buildURL($new){ 
+function buildURL($new, $withprefix = false){ 
 	$params = $_GET;
-	$postfix = '/?';
 	
 	foreach($new as $k => $v) $params[$k] = $v;
 	foreach($params as $k => $v) if(!$v) unset($params[$k]);
 	
 	$url = array();
 	foreach($params as $k => $v) $url[] = $k.'='.$v;
-	$prefix = explode('/', $_SERVER['REQUEST_URI']);
 
-	if(sizeof($url) > 1) $postfix = '/?';
-	if(sizeof($prefix) == 3) $prefix = $prefix[1].$postfix; else $prefix = '';
-	return $prefix.join('&', $url);
+	$url = ((sizeof($url) > 0) ? '?' : '').join('&', $url);
+
+	if(!$withprefix) return $url;
+	
+	$prefix = explode('/', $_SERVER['REQUEST_URI']);
+	
+	if(sizeof($prefix) > 1 && strlen($prefix[0]) > 0){
+		unset($prefix[sizeof($prefix)-1]);
+		$prefix = join('/', $prefix).'/'; 
+	} else $prefix = '';
+	return $prefix.$url;
 };
 
 /**
