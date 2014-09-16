@@ -2,6 +2,8 @@
 
 header('X-Powered-By: AEON Web Engine');
 header('X-Powered-By-Version: v2:Alpha');
+header('P3P: CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
+
 /**
  * Записывает код 404 в заголовок ответа
  * @param bool $terminate   немедленнно прекратить выролнение скрипта

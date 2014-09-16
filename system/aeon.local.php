@@ -19,45 +19,55 @@ class Local {
         /**
          * Если есть APC храним с его помощью
          */
-        if(function_exists('apc_exists')) {
-            /**
-             * Список языков
-             */
-            if(!apc_exists('languages')) {
-                $json = file_get_contents(__SYSTEM__.'/languages.json');    
-                apc_add('languages', $json, 60);   
-            } 
-            else
-            {
-                $json = apc_fetch('languages');
-            }
-            /**
-             * Список связанных культур и стран
-             */
-            if(!apc_exists('cultures')) {
-                $cultures = file_get_contents(__SYSTEM__.'/cultures.json');
-                apc_add('cultures', $json, 60);   
-            } 
-            else
-            {
-                $cultures = apc_fetch('cultures');
-            } 
-
-        } 
+        $resources = array(
+            'languages' => __SYSTEM__.'/languages.json',
+            'cultures'  => __SYSTEM__.'/cultures.json',
+        );
+        if(function_exists('apc_exists'))
+            foreach($resources as $name => $path) $this->loadResource($name, $path);
         else 
-        {
-            /**
-             * Если APC нет, то загружаем из файлов
-             */
-            $json = file_get_contents(__SYSTEM__.'/languages.json');
-            $cultures = file_get_contents(__SYSTEM__.'/cultures.json');
-        }
+            foreach($resources as $name => $path) $this->loadStaticResources($name, $path);
+    }
+
+    /**
+     * Загрузка ресурсов если есть APC
+     * @param $name
+     * @param $path
+     */
+    private function loadResource($name, $path) {
         /**
-         * Загружаем JSON с данными
+         * Есть ли ресурс в APC
          */
-        $this->languages = json_decode(preg_replace('/(\xEF\xBB\xBF)+/', '', $json), true);
-        $this->cultures = json_decode(preg_replace('/(\xEF\xBB\xBF)+/', '', $cultures), true);
-        unset($json);
+        if(!apc_exists($name)) {
+            /// Получаем из файла
+            $json = file_get_contents($path);
+            /// Записываем в APC
+            apc_add($name, $json, 60);
+            /// Заносим в переменную
+            $this->$name = $this->parseJSON($json);
+            unset($json);
+            return;
+        };
+        /// Получем из APC и заносим в переменную
+        $this->$name = $this->parseJSON(apc_fetch($name));
+    }
+
+    /**
+     * Загрузка из файлов если APC нет
+     * @param $name
+     * @param $path
+     */
+    private function loadStaticResources($name, $path) {
+        $this->$name = $this->parseJSON(file_get_contents($path));
+    }
+
+    /**
+     * Парсер файловых данных с предобработкой на случай использования BOM в UTF8
+     * @param $json
+     * @return mixed
+     */
+    private function parseJSON($json) {
+        return json_decode(preg_replace('/(\xEF\xBB\xBF)+/', '', $json), true);
     }
 
     /**
