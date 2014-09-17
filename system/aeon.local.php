@@ -20,6 +20,7 @@ class Local {
          * Если есть APC храним с его помощью
          */
         $resources = array(
+            'countries' => __SYSTEM__.'/countries.json',
             'languages' => __SYSTEM__.'/languages.json',
             'cultures'  => __SYSTEM__.'/cultures.json',
         );
