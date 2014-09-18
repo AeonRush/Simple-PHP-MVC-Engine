@@ -4,7 +4,7 @@ namespace Eva;
 
 class Is {
     public static function email($e) {
-        return preg_match('/^[a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[@][a-zA-Z0-9_-]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $email);
+        return preg_match('/^[a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[@][a-zA-Z0-9_-]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $e);
     }
     public static function login($l) {
         return preg_match('/^[^_\-0-9][A-z0-9_]{3,32}$/', $l);
