@@ -47,5 +47,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d 
 RewriteRule . /index.php [L]
 
-# RewriteCond %{HTTP_HOST} ^www\.onmy\.org [NC]
-# RewriteRule ^(.*)$ http://onmy.org/$1 [R=301,L]
+# RewriteCond %{HTTP_HOST} ^www\.site\.com [NC]
+# RewriteRule ^(.*)$ http://site.com/$1 [R=301,L]
