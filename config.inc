@@ -6,7 +6,7 @@ return array(
     'db:user' => 'root',
     'db:password' => '123321',
     /// Engine options
-    'eva:languages' => array('ru-RU', 'en-US', 'uk-UA')
+    'eva:languages' => array('ru-RU', 'en-US')
 );
 
 /// 2014 | AeonRUSH |

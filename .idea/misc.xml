@@ -17,9 +17,5 @@
     </entry>
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="VagrantSettings">
-    <option name="instanceFolder" value="" />
-    <option name="vagrantExecutable" value="vagrant.bat" />
-  </component>
 </project>
 

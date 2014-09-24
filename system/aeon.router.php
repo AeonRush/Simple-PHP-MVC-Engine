@@ -19,15 +19,19 @@ class Router {
         elseif(!empty($_FILES)) $this->httpMethod = 'files';
         
 		$_SERVER['REQUEST_URI'] = iconv('cp1251', 'utf-8', substr($_SERVER['REQUEST_URI'], ($_SERVER['REQUEST_URI'][1] == '?') ? 2 : 1));
-        
-        $this->getRoutes(__APP__.'/*/routes.php');
-        
+
+        $method = function_exists('apc_exists') ? 'loadCachedResources' : 'loadStaticResources';
+
         if(\app::isAuth()) {
-            $this->getRoutes(__APP__.'/*/routes.'.\app::getRole().'.php');
+            $this->$method(__APP__.'/*/routes.'.\app::getRole().'.php');
+            if(\app::getRole() != 'secure')
+                $this->$method(__APP__.'/*/routes.secure.php');
         } else {
-            $this->getRoutes(__APP__.'/*/routes.unsecure.only.php');
+            $this->$method(__APP__.'/*/routes.unsecure.only.php');
         };
-        
+
+        $this->$method(__APP__.'/*/routes.php');
+
         foreach($this->rules as $template => $params) {
             $url = explode(':', $template);
 
@@ -61,15 +65,29 @@ class Router {
 	}
 
     /**
-     * Получение списка путей
-     * @param $url
+     * Использование APC в качестве кэша для роутера :)
+     * @param $path
      */
-    private function getRoutes($url) {
-        $files = glob($url);
+    private function loadCachedResources($path) {
+        if(apc_exists('routes-'.crc32_fix($path))) {
+            $this->rules = array_merge($this->rules, json_decode(apc_fetch('routes-'.crc32_fix($path)) ,true));
+            return;
+        }
+        $this->loadStaticResources($path);
+    }
+    /**
+     * Загрузка параметров роутера из файлов в ФС
+     * @param $path
+     */
+    private function loadStaticResources($path) {
+        $files = glob($path);
+        $data = array();
         foreach($files as $k => $v) {
-            $this->rules = array_merge($this->rules, include($v));
+            $data = array_merge($data, include($v));
         };
-        unset($files);
+        $this->rules = array_merge($this->rules, $data);
+        if(function_exists('apc_exists')) apc_add('routes-'.crc32_fix($path), json_encode($data), 60);
+        unset($files, $data);
     }
 };
 
