@@ -16,7 +16,8 @@ extras/documentation
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -27,6 +28,8 @@ Icon
 
 # Windows
 # =========================
+
+.idea/
 
 # Windows image file caches
 Thumbs.db

@@ -30,17 +30,12 @@ final class app {
         self::$router = \Router::getInstance();
         return self::$app;
 	}
-    public static function getUser(){
-        return self::$auth->getUser();
-    }
-    public static function isAuth(){
-        return self::$auth->isAuth();
-    }
-    public static function getRole(){
-        return self::$auth->getRole();
-    }
+
     public static function getParam($key){
         return self::$config[$key];
+    }
+    public static function auth(){
+        return self::$auth;
     }
     public static function locale(){
         return self::$local;

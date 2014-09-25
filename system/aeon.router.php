@@ -22,9 +22,9 @@ class Router {
 
         $method = function_exists('apc_exists') ? 'loadCachedResources' : 'loadStaticResources';
 
-        if(\app::isAuth()) {
-            $this->$method(__APP__.'/*/routes.'.\app::getRole().'.php');
-            if(\app::getRole() != 'secure')
+        if(\app::auth()->isAuth()) {
+            $this->$method(__APP__.'/*/routes.'.\app::auth()->getRole().'.php');
+            if(\app::auth()->getRole() != 'secure')
                 $this->$method(__APP__.'/*/routes.secure.php');
         } else {
             $this->$method(__APP__.'/*/routes.unsecure.only.php');
