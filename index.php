@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(E_ALL);
+error_reporting(0);
 session_start();
 mb_internal_encoding('UTF-8');
 
@@ -11,7 +11,6 @@ define('__HOST__', (($_SERVER['SERVER_PORT'] == 443) ? 'https' : 'http').'://'.$
 
 ob_start();
     include(__SYSTEM__.'/aeon.php');
-    # TODO Finalize the tracer
     # include(__SYSTEM__.'/aeon.tracer.php');
     include(__SYSTEM__.'/aeon.headers.php');
     include(__SYSTEM__.'/aeon.auth.php');
