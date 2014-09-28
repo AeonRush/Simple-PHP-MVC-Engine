@@ -3,6 +3,18 @@ namespace Eva;
 /**
  * Class ActiveRecord
  * TODO : Закончить код
+ *
+ * Пример использования
+ *
+ *      \app::model('example')->where('id = :id')->id(1, PDO::PARAM_INT)->limit(1)->select()
+ *      \app::model('example')->where('category = :category')->category(1, PDO::PARAM_INT)->page(1, 10)->orderby('date desc')->select('id, title, price')
+ *
+ *      \app::model('example')->where('id = :id')->id(1, PDO::PARAM_INT)->update(array('title' => 'new_title'))
+ *
+ *      \app::model('example')->id(1, PDO::PARAM_INT)->title('new_title', PDO::PARAM_STR)->insert()
+ *
+ *      \app::model('example')->where('id = :id')->id(1, PDO::PARAM_INT)->delete()
+ *
  * @package Eva
  */
 abstract class ActiveRecord extends Eva {
@@ -27,6 +39,7 @@ abstract class ActiveRecord extends Eva {
 
     /**
      * Изменение названия таблицы в запросах
+     * ->instance('new_table_name')
      * @param $i
      * @return $this
      */
@@ -45,18 +58,33 @@ abstract class ActiveRecord extends Eva {
 
     /**
      * Задаёт Limit и Offset для запросов
+     * ->limit(10, 0) => взять 10, пропустить 0
      * @param $l
      * @param null $o
      * @return $this
      */
     public function limit($l, $o = NULL) {
         $this->limit = array($l, PDO::PARAM_INT);
-        if($o != NULL) $this->offset = array($o, PDO::PARAM_INT);
+        if($o != NULL) $this->offset($o);
         return $this;
     }
 
     /**
+     * Работа с Limit и Offset как со страницами :)
+     * ->page(1, 10) => показать первую страницу с 10 элементами на странице
+     * @param $p
+     * @param $l
+     * @return $this
+     */
+    public function page($p, $l) {
+        $this->limit = array($l, PDO::PARAM_INT);
+        if($p < 1) $p = 1;
+        $this->offset($p-1);
+        return $this;
+    }
+    /**
      * Задает Offset
+     * ->offset(10) => пропустить 10
      * @param $o
      * @return $this
      */
@@ -66,7 +94,8 @@ abstract class ActiveRecord extends Eva {
     }
 
     /**
-     * Выборка из БД
+     * Выборка из БД endpoint
+     * ->select('id, title')
      * @param string $what
      * @return null
      */
@@ -75,7 +104,8 @@ abstract class ActiveRecord extends Eva {
     }
 
     /**
-     * Обновление данных в БД
+     * Обновление данных в  endpoint
+     * ->update(array('id' => 1, 'title' => 'new_title'))
      * @param $a Наимменование полея для обновления
      * @return null
      */
@@ -93,7 +123,8 @@ abstract class ActiveRecord extends Eva {
     }
 
     /**
-     * Добавление новой записи в БД
+     * Добавление новой записи в БД endpoint
+     * ->insert()
      * @return null
      */
     public function insert() {
@@ -114,7 +145,8 @@ abstract class ActiveRecord extends Eva {
     }
 
     /**
-     * Удаление записи из БД
+     * Удаление записи из БД endpoint
+     * ->delete()
      * @return null
      */
     public function delete() {
@@ -125,7 +157,8 @@ abstract class ActiveRecord extends Eva {
      * Подготовка и выполнения запроса
      * На этой стадии добавляется Where, Limit, Group, Order
      * @param $statement
-     * @return null
+     * @return array|null
+     * @throws \Exception
      */
     protected function exec($statement){
         $return = array();
@@ -164,13 +197,15 @@ abstract class ActiveRecord extends Eva {
              */
             $return['limit'] = $this->limit[0];
             if($this->offset) {
-               $return['offset'] = $this->offset[0];
-                $this->__data__['limit'][0] = $this->limit[0] * $this->offset[0];
-                $statement .= ' LIMIT :limit, :offser';
+                $return['page'] = $this->offset[0] + 1;
+                $this->__data__['offset'][0] = $this->limit[0] * $this->offset[0];
+                $return['offset'] = $this->offset[0];
+                $statement .= ' LIMIT :offset, :limit';
             } else {
                 $statement .= ' LIMIT :limit';
             };
         };
+
         /**
          * Магия PDO
          */
@@ -178,17 +213,22 @@ abstract class ActiveRecord extends Eva {
         foreach($this->__data__ as $k => $v) {
             $sth->bindParam(':'.$k, $v[0], $v[1] ? $v[1] : PDO::PARAM_STR);
         };
+
         $sth->execute();
         $this->cleanup();
         /**
          * Если ошибок нет, выводим результат
          */
         if($sth->errorCode() == '00000') {
+            if($return['limit'] == 1) {
+                unset($return);
+                return $sth->fetch(PDO::FETCH_ASSOC);
+            };
             $return['result'] = $sth->fetchAll(PDO::FETCH_ASSOC);
             $return['total'] = \app::$db->query('SELECT FOUND_ROWS()')->fetch(PDO::FETCH_COLUMN);
             return $return;
         };
-        throw \Exception('PDO::Error');
+        throw new \Exception('PDO::Error');
     }
 
 };

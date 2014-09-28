@@ -136,6 +136,17 @@ function optimize(&$__content) {
 };
 
 /**
+ * Удаление дерева каталогов
+ * @param $dir
+ * @return bool
+ */
+function deleteTree($dir) {
+    $files = array_diff(scandir($dir), array('.','..'));
+    foreach ($files as $file) { (is_dir("$dir/$file")) ? deleteTree("$dir/$file") : unlink("$dir/$file"); };
+    return rmdir($dir);
+};
+
+/**
  * Упаковываем контент для передачи браузеру :)
  * @param $output
  * @return string
