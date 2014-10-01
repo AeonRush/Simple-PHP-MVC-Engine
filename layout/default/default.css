@@ -16,7 +16,7 @@
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	color: rgb(13, 13, 13);
-	outline: none;
+	outline: none; 
 }
 body {
     font-size: 14px;

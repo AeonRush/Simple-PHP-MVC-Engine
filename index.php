@@ -7,7 +7,7 @@ mb_internal_encoding('UTF-8');
 define('__ROOT__', dirname(__FILE__));
 define('__SYSTEM__', __ROOT__.'/system');
 define('__APP__', __ROOT__.'/application');
-define('__HOST__', (($_SERVER['SERVER_PORT'] == 443) ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].( strtr($_SERVER['PHP_SELF'], array('/index.php' => '') ) ));
+define('__HOST__', ('//'.$_SERVER['HTTP_HOST']));
 
 ob_start();
     include(__SYSTEM__.'/aeon.php');
