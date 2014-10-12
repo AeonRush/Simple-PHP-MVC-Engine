@@ -17,8 +17,8 @@ final class Auth {
         return self::$self;
     }
     public function __construct(){
-        $this->user = $_SESSION['aeon-user'];
-        $this->isAuth = !empty($_SESSION['aeon-user']);
+        $this->user = $_SESSION[\app::getParam('auth:session-key')];
+        $this->isAuth = !empty($_SESSION[\app::getParam('auth:session-key')]);
         //TODO: Сделать проверку данных при авторизации. Например при использовании cookie
     }
 
@@ -57,8 +57,8 @@ final class Auth {
      * LOGOUT
      */
     public static function out(){
-        $_SESSION['aeon-user'] = array();
-        unset($_SESSION['aeon-user']);
+        $_SESSION[\app::getParam('auth:session-key')] = array();
+        unset($_SESSION[\app::getParam('auth:session-key')]);
     }
 
 };
