@@ -81,23 +81,19 @@ class Local {
 
         if(sizeof(\app::getParam('eva:languages')) == 1) {
             if(empty($language)) return;
-            header('Location: '.substr($_SERVER['REQUEST_URI'], 6));
-            exit;    
+            \app::redirect(substr($_SERVER['REQUEST_URI'], 6));
         };
         
-        $keys = array_keys($this->getSupportedLanguages());
         $default = array_keys($this->getUserLanguages());
 
-        if(!empty($language)){
-            $language = (substr($language[1], 0, 2).'-'.strtoupper(substr($language[1], 3, 5)));
+        if(empty($language)){
+            \app::redirect('/'.strtolower($default[0]).$_SERVER['REQUEST_URI']);
+        };
 
-            if(!in_array($language, $keys)) {
-                header('Location: /'.strtolower($default[0]).substr($_SERVER['REQUEST_URI'], 6));
-                exit;
-            }
-        } else {
-            header('Location: /'.strtolower($default[0]).$_SERVER['REQUEST_URI']);
-            exit;
+        $language = (substr($language[1], 0, 2).'-'.strtoupper(substr($language[1], 3, 5)));
+
+        if(!in_array($language, array_keys($this->getSupportedLanguages()))) {
+            \app::redirect('/'.strtolower($default[0]).substr($_SERVER['REQUEST_URI'], 6));
         }
     }
 

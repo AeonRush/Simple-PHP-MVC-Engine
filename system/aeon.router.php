@@ -46,9 +46,10 @@ class Router {
                 $i = sizeof($matches);
 				for($j=1;$j<$i; ++$j){ $e[1] = str_replace('$'.$j, $matches[$j+1], $e[1]); };
 
-				$e[1] = strtr( mysql_escape_string(urldecode( $e[1] ) ), array('=' => '":"', '&' => '","'));
-				if(isset($e[1]{5})) $_GET = array_merge($_GET, json_decode('{"'.$e[1].'"}', true));
-				
+				$e[1] = strtr( addslashes(urldecode( $e[1] ) ), array('=' => '":"', '&' => '","'));
+
+                if(isset($e[1]{5})) $_GET = array_merge($_GET, json_decode(sprintf('{"%s"}', str_replace("\\'", "'", $e[1])), true));
+
                 $class = explode('/', $e[0]);
                 $class[0] = '\Page\\'.$class[0];
                 $e = new $class[0]();

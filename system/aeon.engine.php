@@ -30,7 +30,10 @@ final class app {
         self::$router = \Router::getInstance();
         return self::$app;
 	}
-
+    public static function redirect($url) {
+        header('Location: '.$url);
+        exit;
+    }
     public static function getParam($key){
         return self::$config[$key];
     }
@@ -52,6 +55,23 @@ final class app {
             }
             $a[$k] = htmlspecialchars($v);   
         }
+    }
+    public static function postprocess($html){
+        # TODO: Написать дописывание языка в URL
+        /*
+        ob_start();
+        $regexp = "<a\s[^>]*href=(\"??)([^\" >]*?)\\1[^>]*>(.*)<\/a>";
+
+        if(preg_match_all("/$regexp/siU", $html, $matches, PREG_SET_ORDER)) {
+            foreach($matches as $v) {
+                echo $v[2].'<br>';
+            }
+        };
+        echo $html;
+        $html = ob_get_contents();
+        ob_end_clean();
+        */
+        return $html;
     }
 };
 
