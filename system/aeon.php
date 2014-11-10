@@ -58,7 +58,7 @@ function toCanonical($url){
 	$url = str_replace('№', '-', $url);
     $url = mb_ereg_replace('\W+', '-',  $url );
    	return mb_ereg_replace('\-+', '-', $url);
-	return mb_strtolower( mb_ereg_replace('\_+', '-', $url), 'UTF-8' );
+	# return mb_strtolower( mb_ereg_replace('\_+', '-', $url), 'UTF-8' );
 };
 
 /**

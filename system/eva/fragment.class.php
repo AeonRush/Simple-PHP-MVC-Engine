@@ -11,7 +11,7 @@ namespace Eva {
                 $method = 'secure_'.$method;
             };
 
-            if(!method_exists($this, $method)) return;
+            if(!method_exists($this, $method)) return false;
             $this->view = $parent_view;
             return $this->$method($args);
         }

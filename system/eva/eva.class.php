@@ -15,7 +15,7 @@ namespace Eva {
         public function __unset($name) {
             unset($this->__data__[$name]);
         }
-        public function __call($name)
+        public function __call($name, $a)
         {
             // Note: value of $name is case sensitive.
             if(!method_exists($this, $name)) return;
@@ -24,8 +24,9 @@ namespace Eva {
         /**
          * As of PHP 5.3.0
          * @param $name
+         * @param $a
          */
-        public static function __callStatic($name)
+        public static function __callStatic($name, $a)
         {
             if(!method_exists(self, $name)) return;
         }
