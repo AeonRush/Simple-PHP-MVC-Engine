@@ -15,16 +15,19 @@ namespace Eva {
         public function __unset($name) {
             unset($this->__data__[$name]);
         }
-        public function __call($name, $arguments)
+        public function __call($name)
         {
             // Note: value of $name is case sensitive.
-            if(!method_exists(array($this, $name))) return;
+            if(!method_exists($this, $name)) return;
         }
 
-        /**  As of PHP 5.3.0  */
-        public static function __callStatic($name, $arguments)
+        /**
+         * As of PHP 5.3.0
+         * @param $name
+         */
+        public static function __callStatic($name)
         {
-            if(!method_exists(array($this, $name))) return;
+            if(!method_exists(self, $name)) return;
         }
     };
     class PDO extends \PDO {};
