@@ -20,14 +20,16 @@ class Local {
          * Если есть APC храним с его помощью
          */
         $resources = array(
-            'countries' => __SYSTEM__.'/countries.json',
-            'languages' => __SYSTEM__.'/languages.json',
-            'cultures'  => __SYSTEM__.'/cultures.json',
+            'countries' => __DIR__.'/local/countries.json',
+            'languages' => __DIR__.'/local/languages.json',
+            'cultures'  => __DIR__.'/local/cultures.json',
         );
-        if(function_exists('apc_exists'))
+        if(__APC__)
             foreach($resources as $name => $path) $this->loadResource($name, $path);
         else 
             foreach($resources as $name => $path) $this->loadStaticResources($name, $path);
+
+        $this->localeCheck();
     }
 
     /**
@@ -163,7 +165,6 @@ class Local {
 
         /**
          * Заполнение массива данными о названии языка, культуре и т.д.
-         * https://github.com/AeonRush/Simple-PHP-MVC-Engine/blob/master/system/languages.json
          */
         $langs = array();
         foreach($lang as $k2 => $v2) {
@@ -180,4 +181,4 @@ class Local {
     }
 };
 
-/// 2014 | AeonRUSH |
+/// 2015 : AeonRush

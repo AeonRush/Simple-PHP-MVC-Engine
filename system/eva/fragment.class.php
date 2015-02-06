@@ -2,6 +2,9 @@
 
 /**
  * Class Fragment
+ * Simple call
+ *  new \Fragment\Home('index', $this, 'Modern, progressive!');
+ * And that's all :)
  */
 namespace Eva {
     class Fragment extends Eva {

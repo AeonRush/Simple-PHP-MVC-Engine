@@ -1,9 +1,10 @@
 <?php
 
-/**
- * Class App
- */
 namespace Eva {
+    /**
+     * Class Page
+     * @package Eva
+     */
     abstract class Page extends Eva {
         protected $view;
         public function __construct(){

@@ -77,7 +77,7 @@
 	<div>
 		&copy; <?php echo Date('Y')?><a href="http://aeonrush.com/">AeonRush</a>
         <select onchange="location = '/' + this.value.toLowerCase() + location.pathname.substr(6)">
-            <?php $c = \app::locale()->getCurrentLanguage(); foreach(\app::locale()->getSupportedLanguages() as $k => $v) { ?>
+            <?php $c = \app::local()->getCurrentLanguage(); foreach(\app::local()->getSupportedLanguages() as $k => $v) { ?>
                 <option value="<?php echo $k?>" <?php if($c == $k) echo "selected"?>><?php echo $v['language-name']?></option>
             <?php }; ?>
         </select>

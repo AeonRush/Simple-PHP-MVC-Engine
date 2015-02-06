@@ -19,7 +19,7 @@ final class Auth {
     public function __construct(){
         $this->user = $_SESSION[\app::getParam('auth:session-key')];
         $this->isAuth = !empty($_SESSION[\app::getParam('auth:session-key')]);
-        //TODO: Сделать проверку данных при авторизации. Например при использовании cookie
+        // TODO: Сделать проверку данных при авторизации. Например при использовании cookie
     }
 
     /**
